@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class tempMovement : MonoBehaviour
 {
-    public float moveSpeed = 1.0f;
+    public float moveSpeed = 3.0f;
 
     // Start is called before the first frame update
     void Start()
