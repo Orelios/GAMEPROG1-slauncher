@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping; //Determines if the player is jumping
 
     private float coyoteTime = 0.2f; //The max time for coyote time
-    private float coyoteTimeCounter; //Determines the counter for jumpbuffering
+    private float coyoteTimeCounter; //Determines the counter for coyote time
 
     private float jumpBufferTime = 0.2f; //The max time for jumpbuffering
     private float jumpBufferCounter; //Determines the counter for jumpbuffering
@@ -66,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
 
-        //Flip(); -> Currently unused
     }
 
     private void FixedUpdate()
