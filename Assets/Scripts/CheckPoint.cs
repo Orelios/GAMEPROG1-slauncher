@@ -8,7 +8,7 @@ public class CheckPoint : MonoBehaviour
 
     private void Awake()
     {
-        spawn = GameObject.FindGameObjectWithTag("Player").GetComponent<Spawn>();
+        spawn = GameObject.FindGameObjectWithTag("Player").GetComponent<Spawn>(); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

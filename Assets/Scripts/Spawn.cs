@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     Vector2 checkPointPos;
-    public Player player;
+    public Player player; 
 
     void Start()
     {
