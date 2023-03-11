@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))//Used to prevent the player from spamming jumps
+        if (Input.GetKeyDown(KeyCode.W))//Used to prevent the player from spamming jumps
         {
             jumpBufferCounter = jumpBufferTime;
         }
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(JumpCooldown());
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)//Used for small/tap jump
+        if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)//Used for small/tap jump
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 

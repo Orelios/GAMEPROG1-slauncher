@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
-    private float horizontal; //Used for the horizontal inputs
-    public float moveSpeed = 8f; //Used to determine the speed of the player
+    public float atkSpeed;
+    public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
