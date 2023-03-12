@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float speed = 3.0f;
-    public float lifeTime = 3.0f;
-    public float damage = 1.0f;
+    public float speed = 3.0f; //Determines how fast the bullet travels
+    public float lifeTime = 3.0f; //Determines how long the bullet last
+    public float damage = 1.0f; //Determines how much damage the bullet has
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, lifeTime);
+        Destroy(this.gameObject, lifeTime); //Destroy the object
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            
+            collider.GetComponent<Player>().health -= damage;
             Destroy(this.gameObject);
         }
     }
