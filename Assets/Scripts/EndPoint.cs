@@ -5,10 +5,6 @@ using UnityEngine;
 public class EndPoint : MonoBehaviour
 {
     public Timer timer;
-    private void Awake()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
