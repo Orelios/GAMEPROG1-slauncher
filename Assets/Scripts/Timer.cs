@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     TextMeshProUGUI timerText;
     private float time = 0;
+    [HideInInspector]
     public int endPoint = 0; 
     void Start()
     {
