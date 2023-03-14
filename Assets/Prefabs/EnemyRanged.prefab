@@ -175,5 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a9c22ed71c26d4c83b6d2d43bca3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 0}
+  enemyBullet: {fileID: 4250709382161617115, guid: c59ddb1af6148984896103e65636f779, type: 3}
   fireRate: 3
