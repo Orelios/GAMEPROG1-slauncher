@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
             }
             */
         }
-        if(cooldownTimerPickUp <= 0.0f)
+
+        if(cooldownTimerPickUp <= 0.0f && health < maxHealth)
         {
             canPickUp = true;
         }
@@ -44,6 +45,10 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Slime" && canPickUp == true)
         {
             health += 1.0f;
+            if(health >= maxHealth) //prevents from overcapping
+            {
+                health = maxHealth;
+            }
             Destroy(other.gameObject);
             cooldownTimerPickUp = cooldownPickUp;
             canPickUp = false;
