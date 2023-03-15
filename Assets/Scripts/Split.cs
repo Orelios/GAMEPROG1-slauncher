@@ -16,7 +16,7 @@ public class Split : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.E))
+        if(Input.GetKeyUp(KeyCode.Space))
         {
             //only allows player to Split when health >= 3 
             if(player.health >= 3.0f)
