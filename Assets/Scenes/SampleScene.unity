@@ -310,6 +310,9 @@ MonoBehaviour:
   canPickUp: 0
   cooldownPickUp: 1
   cooldownTimerPickUp: 0
+  invulCooldown: 1
+  invulCooldownTimer: 0
+  damageAble: 1
 --- !u!1 &139244161
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 1077583990037259617, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2756235131036040105, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -742,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 2756235131036040105, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461940620923908847, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
+      propertyPath: moveSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
@@ -889,6 +900,10 @@ PrefabInstance:
     - target: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
       propertyPath: m_Name
       value: EnemyRanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6394166306052685437, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
       propertyPath: atkRange

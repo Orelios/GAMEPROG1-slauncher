@@ -11,14 +11,34 @@ public class Player : MonoBehaviour
     //cooldownTimerPickUp will be the value that decreases over time
     public float cooldownTimerPickUp;
     // Start is called before the first frame update
+
+    public float invulCooldown = 2.0f;
+    public float invulCooldownTimer;
+    public bool damageAble = true;
+
     void Start()
     {
         cooldownTimerPickUp = cooldownPickUp;
+        invulCooldownTimer = invulCooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (damageAble == false)
+        {
+            if (invulCooldownTimer > 0.0f)
+            {
+                invulCooldownTimer -= Time.deltaTime;
+            }
+        }
+
+        if (invulCooldownTimer <= 0.0f)
+        {
+            damageAble = true;
+        }
+
         //starts timer to allow pickup of slime
         if(canPickUp == false)
         {
@@ -39,6 +59,8 @@ public class Player : MonoBehaviour
             canPickUp = true;
         }
     }
+
+
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name + "has stayed on trigger");
@@ -52,6 +74,16 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             cooldownTimerPickUp = cooldownPickUp;
             canPickUp = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy" && damageAble == true)
+        {   
+            health -= other.GetComponent<Enemy>().collisionDamage;
+            invulCooldownTimer = invulCooldown;
+            damageAble = false;
         }
     }
 }

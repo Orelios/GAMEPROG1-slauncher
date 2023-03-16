@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
+  collisionDamage: 1
   droppableSlime: {fileID: 6997179319594507624, guid: 4e382409ac91d414d8e50930fc5e93e9, type: 3}
 --- !u!114 &3461940620923908847
 MonoBehaviour:
