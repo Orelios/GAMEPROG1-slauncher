@@ -10,12 +10,16 @@ public class Player : MonoBehaviour
     public float cooldownPickUp = 1.0f;
     //cooldownTimerPickUp will be the value that decreases over time
     public float cooldownTimerPickUp;
-    // Start is called before the first frame update
+    
 
     public float invulCooldown = 2.0f;
     public float invulCooldownTimer;
+    // invulCooldownTimer will be the value that decreases over time
     public bool damageAble = true;
+    // Checks if the player can be damaged
 
+
+    // Start is called before the first frame update
     void Start()
     {
         cooldownTimerPickUp = cooldownPickUp;
@@ -77,7 +81,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) //Used to make i-frames after taking damage from enemies
     {
         if (other.gameObject.tag == "Enemy" && damageAble == true)
         {   
