@@ -8,9 +8,12 @@ public class Player : MonoBehaviour
     public float maxHealth = 12.0f;
     public bool canPickUp = false;
     public float cooldownPickUp = 1.0f;
+    public float largeHealth = 12.0f, mediumHealth = 8.0f, smallHealth = 4.0f;
+    public float largeScale = 1.5f, mediumScale = 1.0f, smallScale = 0.5f;
+    private float xScale, yScale, zScale = 0.0f;
     //cooldownTimerPickUp will be the value that decreases over time
     public float cooldownTimerPickUp;
-    
+
 
     public float invulCooldown = 2.0f;
     public float invulCooldownTimer;
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
         {
             canPickUp = true;
         }
+        PlayerResize();
     }
 
 
@@ -84,10 +88,30 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) //Used to make i-frames after taking damage from enemies
     {
         if (other.gameObject.tag == "Enemy" && damageAble == true)
-        {   
+        {
             health -= other.GetComponent<Enemy>().collisionDamage;
             invulCooldownTimer = invulCooldown;
             damageAble = false;
         }
+    }
+
+    private void PlayerResize()
+    {
+        if(health >= 1 && health <= smallHealth)
+        {
+            xScale = smallScale;
+            yScale = smallScale;
+        }
+        else if(health > smallHealth && health <= mediumHealth)
+        {
+            xScale = mediumScale;
+            yScale = mediumScale;
+        }
+        else if(health > mediumHealth && health <= largeHealth)
+        {
+            xScale = largeScale;
+            yScale = largeScale;
+        }
+        transform.localScale = new Vector3(xScale, yScale, zScale);
     }
 }
