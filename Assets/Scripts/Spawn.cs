@@ -23,11 +23,17 @@ public class Spawn : MonoBehaviour
         {
             player.health = 0;
            
-            if (player.health == 0) //Basically this is the code that will be put into the obstacles 
+            if (player.health == 0) 
             {
                 player.health = player.maxHealth;
                 transform.position = checkPointPos;
             }
+        }
+
+        if (player.health == 0)
+        {
+            player.health = player.maxHealth;
+            transform.position = checkPointPos;
         }
     }
 }
