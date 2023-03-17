@@ -24,9 +24,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb; //Used to determine the rigidbody of the Player Sprite
     [SerializeField] private Transform groundCheck; //Used to determine the GroundCheck Object below the player. The object is used to determine if its colliding anything below it
     [SerializeField] private LayerMask groundLayer; //Used to determine which object layer it will check. The object layer that we will use is "Ground"
+    [SerializeField] private SpriteRenderer spriteSlauncher; // Used to reference the Slauncher sprite.
     
     private Animator anim; //Used to reference parameters from the animator
-    private SpriteRenderer sprite; // Used to flip the sprite
+    private SpriteRenderer sprite, slauncher; // Used to flip the sprite
 
     private enum MovementState { idle, running, jumping, falling } //Used to determine the state of the player
     private MovementState state = MovementState.idle; //Assigns state to be idle immediately
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        slauncher = spriteSlauncher;
     }
 
 
