@@ -23,10 +23,11 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && collider.GetComponent<Player>().damageAble == true)
         {
             collider.GetComponent<Player>().health -= damage;
             Destroy(this.gameObject);
         }
+
     }
 }
