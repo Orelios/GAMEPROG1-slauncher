@@ -667,6 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a13e2942512a341b20b747512a41a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 112767244}
   bullet: {fileID: 1561910157383645474, guid: fcd6ef8e378d45344ba721acbe45c728, type: 3}
   bulletTransform: {fileID: 1552555343}
   canFire: 1

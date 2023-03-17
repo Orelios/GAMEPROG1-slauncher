@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public Player player;
     private Camera mainCam;
     private Vector3 mousePos;
     public GameObject bullet;
@@ -27,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
             UpdateCooldownTimer();
         }
 
-        if (canFire && Input.GetMouseButton(0))
+        else if (player.health >= 2.0f && Input.GetMouseButton(0))
         {
             ShootSlime();
         }
@@ -44,6 +45,7 @@ public class PlayerShoot : MonoBehaviour
     void ShootSlime()
     {
         Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+        player.health -= 1.0f;
         canFire = false;
     }
 
