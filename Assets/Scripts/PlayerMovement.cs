@@ -32,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
     private enum MovementState { idle, running, jumping, falling } //Used to determine the state of the player
     private MovementState state = MovementState.idle; //Assigns state to be idle immediately
 
+    public float KBForce; //assigns value for power of knockback
+    public float KBCounter; //counts down how much time is left on knockback effect
+    public float KBTotalTime; //How long the knockback is altogether
+
+    public bool KnockFromRight; //keeps track of which direction player has been hit from
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -85,7 +91,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y); //Calculations and limiter for horizontal movement
+        if(KBCounter <=0) //movement is only enabled if KBCounter (time of knockback effect) is ended
+        {
+            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y); //Calculations and limiter for horizontal movement
+        }
+        else
+        {
+            if(KnockFromRight == true) // sends player to the left when knocked from right
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (KnockFromRight == false) // sends player to the right when knocked from left
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+            KBCounter -= Time.deltaTime; //lowers countdown so knockback doesn't last forever
+        }
     }
 
     //Used to check if it is colliding with a platform that has the "Ground" layer

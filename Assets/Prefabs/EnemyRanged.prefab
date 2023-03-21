@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.9056604, g: 0.22556068, b: 0.22556068, a: 1}
+  m_Color: {r: 0.9529412, g: 0.28235295, b: 0.28235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
+  collisionDamage: 1
   droppableSlime: {fileID: 6997179319594507624, guid: 4e382409ac91d414d8e50930fc5e93e9, type: 3}
 --- !u!114 &5562853186801018
 MonoBehaviour:

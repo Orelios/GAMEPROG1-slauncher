@@ -36,4 +36,5 @@ public class Spawn : MonoBehaviour
             transform.position = checkPointPos;
         }
     }
+ 
 }
