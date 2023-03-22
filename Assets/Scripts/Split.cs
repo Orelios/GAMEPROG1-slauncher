@@ -6,11 +6,13 @@ public class Split : MonoBehaviour
 {
     public Player player;
     public GameObject slime;
+    public float splitForce = 5.0f;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class Split : MonoBehaviour
                 player.cooldownTimerPickUp = player.cooldownPickUp;
                 player.canPickUp = false;
                 //instantiates slime and pushes player up
-                Instantiate(slime, transform.position += new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
+                Instantiate(slime, transform.position, Quaternion.identity);
+                rb.AddForce(new Vector2(0.0f, splitForce), ForceMode2D.Impulse);
                 player.health -= 1.0f;
             }
             else
