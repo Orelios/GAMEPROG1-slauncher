@@ -93,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(KBCounter <=0) //movement is only enabled if KBCounter (time of knockback effect) is ended
         {
-            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y); //Calculations and limiter for horizontal movement
+            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);//Calculations and limiter for horizontal movement
+            KBCounter = 0;
         }
         else
         {

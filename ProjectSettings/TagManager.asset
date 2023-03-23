@@ -8,6 +8,7 @@ TagManager:
   - Slime
   - Enemy
   - Pitfall
+  - PoolOfWater
   layers:
   - Default
   - TransparentFX

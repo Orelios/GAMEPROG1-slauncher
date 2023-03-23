@@ -13,11 +13,11 @@ public class Spikes : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerMovement.KBCounter = playerMovement.KBTotalTime;//resets KBCounter to equal KBTotalTime
-            if(collision.transform.position.x < transform.position.x)//if player is on the left
+            if(collision.transform.position.x < transform.position.x)//if player is on the left, hit from right
             {
                 playerMovement.KnockFromRight = true;
             }
-            if (collision.transform.position.x > transform.position.x)//if player is on the right
+            if (collision.transform.position.x > transform.position.x)//if player is on the right, hit from left
             {
                 playerMovement.KnockFromRight = false;
 
