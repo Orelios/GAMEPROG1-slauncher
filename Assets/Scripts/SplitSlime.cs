@@ -5,10 +5,10 @@ using UnityEngine;
 public class SplitSlime : MonoBehaviour
 {
     public float speed = -1.0f;
-    public float max_Y = 5.5f;
-    public float min_Y = -5.5f;
-    public float max_X = 11.7f;
-    public float min_X = -11.7f;
+    public float max_Y = 100f;
+    public float min_Y = -100f;
+    public float max_X = 100f;
+    public float min_X = -100f;
     private Rigidbody2D rigidBody;
     // Start is called before the first frame update
     void Start()
