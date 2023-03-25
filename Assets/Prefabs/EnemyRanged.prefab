@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5562853186801019}
   - component: {fileID: 5562853186800998}
   - component: {fileID: 6394166306052685437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyRanged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
+  collisionDamage: 1
   droppableSlime: {fileID: 6997179319594507624, guid: 4e382409ac91d414d8e50930fc5e93e9, type: 3}
 --- !u!114 &5562853186801018
 MonoBehaviour:
@@ -191,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333194059260886491}
   - component: {fileID: 5451954893158816293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

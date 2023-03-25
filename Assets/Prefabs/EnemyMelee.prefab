@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3461940620923908847}
   - component: {fileID: 7817184678256614447}
   - component: {fileID: 6465098252996560905}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6695458905311552012}
   - component: {fileID: 5507259533975608002}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
