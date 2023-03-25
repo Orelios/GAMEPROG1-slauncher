@@ -8,6 +8,9 @@ public class PlayerBullet : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float bulletSpeed;
+    public float lifeTime;
+    private int slaunchableLayerNum = 3;
+    private int groundLayerNum = 6;
 
     void Start()
     {
@@ -15,14 +18,29 @@ public class PlayerBullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
+        Destroy(this.gameObject, lifeTime);
+        InitializeBullet();
+    }
+
+    void InitializeBullet()
+    {
         Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
 
-        // Keeps velocity constant
+        // Velocity
         rb.velocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;
 
-        // Rotate the bullet
+        // Rotation
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.layer == slaunchableLayerNum
+            || collider.gameObject.layer == groundLayerNum)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2814815364517022158}
   - component: {fileID: -251966351160066381}
   - component: {fileID: 826196559857797841}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: slime
   m_TagString: Slime
   m_Icon: {fileID: 0}
@@ -100,6 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.5
+  max_Y: 5.5
+  min_Y: -5.5
+  max_X: 11.7
+  min_X: -11.7
 --- !u!50 &-251966351160066381
 Rigidbody2D:
   serializedVersion: 4
