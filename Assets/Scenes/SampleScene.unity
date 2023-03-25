@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 112767243}
   - component: {fileID: 112767245}
   - component: {fileID: 112767246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1243,12 +1243,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayer: {fileID: 112767244}
-  mousePos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 1561910157383645474, guid: fcd6ef8e378d45344ba721acbe45c728, type: 3}
   Slauncher: {fileID: 314252883}
   canFire: 1
   cooldown: 1
-  cooldownTimer: 0
 --- !u!1 &727479147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1942,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8120725788509912354, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
 --- !u!1 &1489380118
@@ -2367,6 +2369,10 @@ PrefabInstance:
     - target: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998284369664258246, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6394166306052685437, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
       propertyPath: atkRange
@@ -3228,6 +3234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2446494080548392676, guid: 9a4ceebfffd40f24aacbaef913f32c31, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5063446782934371407, guid: 9a4ceebfffd40f24aacbaef913f32c31, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3284,6 +3294,10 @@ PrefabInstance:
     - target: {fileID: 5543880862291393464, guid: c8e3736e93d0d374d91281a18d8d2c6b, type: 3}
       propertyPath: m_Name
       value: CheckPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543880862291393464, guid: c8e3736e93d0d374d91281a18d8d2c6b, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5543880862291393468, guid: c8e3736e93d0d374d91281a18d8d2c6b, type: 3}
       propertyPath: m_RootOrder

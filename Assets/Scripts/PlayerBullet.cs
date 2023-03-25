@@ -12,6 +12,10 @@ public class PlayerBullet : MonoBehaviour
     private int slaunchableLayerNum = 3;
     private int groundLayerNum = 6;
 
+    public float fieldOfImpact;
+    public float force;
+    public LayerMask layer;
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -37,10 +41,34 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.layer == slaunchableLayerNum
-            || collider.gameObject.layer == groundLayerNum)
+        if (collider.gameObject.tag == "Player")
         {
+            return;
+        }
+
+        if (collider.gameObject.layer == groundLayerNum
+            || collider.gameObject.layer == slaunchableLayerNum)
+        {
+            Explode();
             Destroy(this.gameObject);
         }
     }
+
+    private void Explode()
+    {
+        var objects = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, layer);
+
+        foreach (var obj in objects)
+        {
+            Vector2 velocity = (obj.transform.position - transform.position).normalized * force;
+            obj.GetComponent<Rigidbody2D>().AddForce(velocity);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, fieldOfImpact);
+    }
+
 }
