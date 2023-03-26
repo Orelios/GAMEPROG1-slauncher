@@ -32481,6 +32481,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1962361196}
     m_Modifications:
+    - target: {fileID: 4685085513796094231, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1720081009}
+    - target: {fileID: 4685085514236526609, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1720081009}
     - target: {fileID: 4685085514667705193, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
       propertyPath: m_Name
       value: UserInterface
@@ -33230,6 +33238,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4989560133765878001, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
   m_PrefabInstance: {fileID: 13232404}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720081009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4989560133765878011, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
+  m_PrefabInstance: {fileID: 13232404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ce503200ec56740a5459452106d8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1720110251
 PrefabInstance:
   m_ObjectHideFlags: 0
