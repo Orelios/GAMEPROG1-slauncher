@@ -51,6 +51,7 @@ public class PlayerBullet : MonoBehaviour
         {
             Explode();
             Destroy(this.gameObject);
+            Destroy(collider.gameObject);
         }
     }
 
@@ -61,6 +62,7 @@ public class PlayerBullet : MonoBehaviour
         foreach (var obj in objects)
         {
             Vector2 velocity = (obj.transform.position - transform.position).normalized * force;
+            obj.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             obj.GetComponent<Rigidbody2D>().AddForce(velocity);
         }
     }
