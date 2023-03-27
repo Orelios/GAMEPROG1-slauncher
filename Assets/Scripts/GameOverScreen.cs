@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; 
+using TMPro;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -10,24 +12,32 @@ public class GameOverScreen : MonoBehaviour
     public TextMeshProUGUI gradeText;
     public TextMeshProUGUI highScoreText;
     private float totalTime;
-    private float highScore = 0;
+    private float highScore;
     void Start()
     {
         totalTime = Timer.time;
+        highScore = PlayerPrefs.GetFloat("LoadHighScore");
+    }
 
+    void Update()
+    {
+        Highscore();
+        GradeAndEndText();
+        TotalTime();
     }
 
     private void Highscore()
     {
-        if (totalTime >= highScore)
+        if (highScore == 0)
+        {
+            highScoreText.text = "High Score: " + totalTime.ToString("0.00");
+        }
+        if (totalTime < highScore)
         {
             highScore = totalTime;
-            highScoreText.text = "High Score: " + highScore.ToString("0.00");
-        }
-        else
-        {
-            highScoreText.text = "High Score: " + highScore.ToString("0.00");
-        }
+            PlayerPrefs.SetFloat("LoadHighScore", totalTime);
+        } 
+        highScoreText.text = "High Score: " + highScore.ToString("0.00");
     }
 
     private void GradeAndEndText()
@@ -74,12 +84,6 @@ public class GameOverScreen : MonoBehaviour
         totalTimeText.text = "Total Time: " + totalTime.ToString("0.00"); 
     }
 
+  
 
-    
-    void Update()
-    {
-        Highscore();
-        GradeAndEndText();
-        TotalTime(); 
-    }
 }
