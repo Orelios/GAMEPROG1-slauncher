@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Pitfall
   - PoolOfWater
+  - PlayerBullet
+  - Wall
   layers:
   - Default
   - TransparentFX
