@@ -13,14 +13,15 @@ public class GameOverScreen : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     private float totalTime;
     private float highScore;
+    SaveHighScore saveHighScore = new SaveHighScore();
     void Start()
     {
         totalTime = Timer.time;
-        highScore = PlayerPrefs.GetFloat("LoadHighScore");
     }
 
     void Update()
     {
+        loadHighScore();
         Highscore();
         GradeAndEndText();
         TotalTime();
@@ -28,31 +29,50 @@ public class GameOverScreen : MonoBehaviour
 
     private void Highscore()
     {
-        if (highScore == 0)
+        if(saveHighScore.highScore == 0)
         {
-            highScoreText.text = "High Score: " + totalTime.ToString("0.00");
+            saveHighScore.highScore = totalTime;
+            string HighScoreData = JsonUtility.ToJson(saveHighScore);
+            string filePath = Application.persistentDataPath + "/HighScoreData.json";
+            //Debug.Log(filePath);
+            File.WriteAllText(filePath, HighScoreData);
+            //Debug.Log("Save method has been read");
         }
         if (totalTime < highScore)
         {
-            highScore = totalTime;
-            PlayerPrefs.SetFloat("LoadHighScore", totalTime);
-        } 
+            saveHighScore.highScore = totalTime; 
+            string HighScoreData = JsonUtility.ToJson(saveHighScore);
+            string filePath = Application.persistentDataPath + "/HighScoreData.json";
+            //Debug.Log(filePath);
+            File.WriteAllText(filePath, HighScoreData);
+            //Debug.Log("Save method has been read"); 
+
+        }
+    }
+
+    private void loadHighScore()
+    {
+        string filePath = Application.persistentDataPath + "/HighScoreData.json";
+        string HighScoreData = File.ReadAllText(filePath);
+        saveHighScore = JsonUtility.FromJson<SaveHighScore>(HighScoreData);
+        //Debug.Log("Data Loaded");
+        highScore = saveHighScore.highScore; 
         highScoreText.text = "High Score: " + highScore.ToString("0.00");
     }
 
     private void GradeAndEndText()
     {
-        if(totalTime <= 20)
+        if (totalTime <= 20)
         {
             endText.text = "TITLE: GOD GAMER";
-            gradeText.text = "GRADE: S"; 
+            gradeText.text = "GRADE: S";
         }
-        else if(totalTime >= 20)
+        else if (totalTime >= 20)
         {
             endText.text = "TITLE: GAMER";
             gradeText.text = "GRADE: A";
         }
-        else if(totalTime >= 40)
+        else if (totalTime >= 40)
         {
             endText.text = "TITLE: GOOD";
             gradeText.text = "GRADE: B";
@@ -81,9 +101,7 @@ public class GameOverScreen : MonoBehaviour
 
     private void TotalTime()
     {
-        totalTimeText.text = "Total Time: " + totalTime.ToString("0.00"); 
+        totalTimeText.text = "Total Time: " + totalTime.ToString("0.00");
     }
-
-  
-
 }
+
