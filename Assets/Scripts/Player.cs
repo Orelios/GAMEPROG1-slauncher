@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public bool damageAble = true;
     // Checks if the player can be damaged
 
+    public int resizeTrue; 
 
     // Start is called before the first frame update
     void Start()
@@ -97,21 +98,26 @@ public class Player : MonoBehaviour
 
     private void PlayerResize()
     {
-        if(health >= 1 && health <= smallHealth)
+        if(resizeTrue == 1)
         {
-            xScale = smallScale;
-            yScale = smallScale;
+            if (health >= 1 && health <= smallHealth)
+            {
+                xScale = smallScale;
+                yScale = smallScale;
+             
+            }
+            else if (health > smallHealth && health <= mediumHealth)
+            {
+                xScale = mediumScale;
+                yScale = mediumScale;
+              
+            }
+            else if (health > mediumHealth && health <= largeHealth)
+            {
+                xScale = largeScale;
+                yScale = largeScale;
+            }
+            transform.localScale = new Vector3(xScale, yScale, zScale);
         }
-        else if(health > smallHealth && health <= mediumHealth)
-        {
-            xScale = mediumScale;
-            yScale = mediumScale;
-        }
-        else if(health > mediumHealth && health <= largeHealth)
-        {
-            xScale = largeScale;
-            yScale = largeScale;
-        }
-        transform.localScale = new Vector3(xScale, yScale, zScale);
     }
 }

@@ -1,48 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Transform start;
-    public Transform end;
-    public float platformSpeed = 1.5f; 
-    Vector2 targetPos;
+    [SerializeField] private GameObject[] wayPoints;
+    private int currentWayPoint = 0;
 
-    void Start()
-    {
-        targetPos = start.position; 
-    }
+    [SerializeField] private float platformSpeed = 2f;
+
+    public Player player; 
     void Update()
     {
-        if (Vector2.Distance(transform.position, start.position)<0.1f)
+        if (Vector2.Distance(wayPoints[currentWayPoint].transform.position,
+            transform.position) < 0.1f)
         {
-            targetPos = end.position; 
+            currentWayPoint++; 
+            if(currentWayPoint >= wayPoints.Length)
+            {
+                currentWayPoint = 0; 
+            }
         }
+        transform.position = Vector2.MoveTowards(transform.position,
+            wayPoints[currentWayPoint].transform.position, Time.deltaTime * platformSpeed);
 
-        if (Vector2.Distance(transform.position, end.position) < 0.1f)
-        {
-            targetPos = start.position;
-        }
-        transform.position = Vector2.MoveTowards(transform.position, targetPos,
-            platformSpeed * Time.deltaTime);
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.SetParent(this.transform); 
+            collision.gameObject.transform.SetParent(transform);
+            player.resizeTrue = 0; 
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.SetParent(null);
+            collision.gameObject.transform.SetParent(null);
+            player.resizeTrue = 1;
         }
     }
 }
