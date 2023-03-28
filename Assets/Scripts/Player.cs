@@ -85,6 +85,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D other) //Picking up ally slimes in world
+    {
+        Debug.Log(other.gameObject.name + "has stayed on trigger");
+        if (other.gameObject.tag == "Ally Slime" && canPickUp == true)
+        {
+            health += 1.0f;
+            if (health >= maxHealth) //prevents from overcapping
+            {
+                health = maxHealth;
+            }
+            Destroy(other.gameObject);
+            cooldownTimerPickUp = cooldownPickUp;
+            canPickUp = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other) //Used to make i-frames after taking damage from enemies
     {
         if (other.gameObject.tag == "Enemy" && damageAble == true)
