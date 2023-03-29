@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
         return transform.localScale.x > Mathf.Epsilon;
     }
 
-    private void OnTriggerExit2D(Collider2D collision) //If the collider collides with a wall, it will flip
+    private void OnTriggerExit2D(Collider2D collision) //If the collider is not colliding with a platform
     {
         if (collision.tag == "Platform")
         {

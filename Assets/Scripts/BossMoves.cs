@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BossMoves : MonoBehaviour
 {
-    private bool phaseOne = false;
-    private bool phaseTwo = true;
+    private bool phaseOne = true;
+    private bool phaseTwo = false;
     private bool phaseThree = false;
+
+    [Header("Dave")]
+    public float health = 10.0f;
+    public float maxHealth = 10.0f;
+
 
     [Header("Bullets")]
     public GameObject bossBullet; //Dangerous Falling Bullets
@@ -25,10 +30,11 @@ public class BossMoves : MonoBehaviour
 
 
     [Header("Summon")]
-    private bool summonAble = true;
+    public GameObject detectionSquare;
     public GameObject enemyMelee;
     public GameObject enemyRanged;
     public GameObject enemyTurret;
+    private bool summonAble = true;
     public GameObject enemySpawner1;
     public GameObject enemySpawner2;
     public GameObject enemySpawner3;
@@ -100,7 +106,12 @@ public class BossMoves : MonoBehaviour
 
         //Phase Two
 
-        if(recharge <= 0 && phaseTwo == true && summonAble == true)
+        if (health <= 5)
+        {
+            phaseTwo = true;
+        }
+
+        if(phaseTwo == true && summonAble == true)
         {
             Instantiate(enemyMelee, enemySpawner1.transform.position, Quaternion.identity);
             Instantiate(enemyMelee, enemySpawner2.transform.position, Quaternion.identity);
@@ -109,9 +120,19 @@ public class BossMoves : MonoBehaviour
             recharge = spawnTimeRate;
             summonAble = false;
         }
-
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "PlayerBullet")
+        {
+            health -= 1.0f;
+        }
 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }

@@ -12,6 +12,7 @@ TagManager:
   - PlayerBullet
   - Wall
   - EnemyBullet
+  - DroppedSlime
   layers:
   - Default
   - TransparentFX
