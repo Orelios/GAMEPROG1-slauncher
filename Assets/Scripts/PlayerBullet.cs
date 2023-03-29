@@ -51,7 +51,11 @@ public class PlayerBullet : MonoBehaviour
         {
             Explode();
             Destroy(this.gameObject);
-            Destroy(collider.gameObject);
+
+            if (collider.gameObject.tag == "Slime")
+            {
+                Destroy(collider.gameObject);
+            }
         }
     }
 

@@ -8,6 +8,7 @@ public class Split : MonoBehaviour
     public GameObject slime;
     public float splitForce = 5.0f;
     private Rigidbody2D rb;
+    Vector2 v;
     // Start is called before the first frame update
 
     void Start()
@@ -29,6 +30,12 @@ public class Split : MonoBehaviour
                 player.canPickUp = false;
                 //instantiates slime and pushes player up
                 Instantiate(slime, transform.position, Quaternion.identity);
+                v = rb.velocity;
+                if(v.y < 0.0f)
+                {
+                    v.y = 0.0f;
+                    rb.velocity = v;
+                }
                 rb.AddForce(new Vector2(0.0f, splitForce), ForceMode2D.Impulse);
                 player.health -= 1.0f;
             }

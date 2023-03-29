@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public bool damageAble = true;
     // Checks if the player can be damaged
 
+    public int resizeTrue; 
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +86,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D other) //Picking up ally slimes in world
+    {
+        Debug.Log(other.gameObject.name + "has stayed on trigger");
+        if (other.gameObject.tag == "Ally Slime" && canPickUp == true)
+        {
+            health += 1.0f;
+            if (health >= maxHealth) //prevents from overcapping
+            {
+                health = maxHealth;
+            }
+            Destroy(other.gameObject);
+            cooldownTimerPickUp = cooldownPickUp;
+            canPickUp = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other) //Used to make i-frames after taking damage from enemies
     {
         if (other.gameObject.tag == "Enemy" && damageAble == true)
@@ -97,21 +114,26 @@ public class Player : MonoBehaviour
 
     private void PlayerResize()
     {
-        if(health >= 1 && health <= smallHealth)
+        if(resizeTrue == 1)
         {
-            xScale = smallScale;
-            yScale = smallScale;
+            if (health >= 1 && health <= smallHealth)
+            {
+                xScale = smallScale;
+                yScale = smallScale;
+             
+            }
+            else if (health > smallHealth && health <= mediumHealth)
+            {
+                xScale = mediumScale;
+                yScale = mediumScale;
+              
+            }
+            else if (health > mediumHealth && health <= largeHealth)
+            {
+                xScale = largeScale;
+                yScale = largeScale;
+            }
+            transform.localScale = new Vector3(xScale, yScale, zScale);
         }
-        else if(health > smallHealth && health <= mediumHealth)
-        {
-            xScale = mediumScale;
-            yScale = mediumScale;
-        }
-        else if(health > mediumHealth && health <= largeHealth)
-        {
-            xScale = largeScale;
-            yScale = largeScale;
-        }
-        transform.localScale = new Vector3(xScale, yScale, zScale);
     }
 }
