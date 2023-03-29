@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) //Used to make i-frames after taking damage from enemies
     {
-        if (other.gameObject.tag == "Enemy" && damageAble == true || other.gameObject.tag == "EnemyBullet" && damageAble == true)
+        if (other.gameObject.tag == "Enemy" && damageAble == true || other.gameObject.tag == "EnemyBullet" && damageAble == true || other.gameObject.tag == "Boss" && damageAble == true)
         {
             health -= 1;
             invulCooldownTimer = invulCooldown;

@@ -9,14 +9,14 @@ public class BossMoves : MonoBehaviour
     private bool phaseThree = false;
 
     [Header("Dave")]
-    public float health = 10.0f;
-    public float maxHealth = 10.0f;
+    public float health = 15.0f;
+    public float maxHealth = 15.0f;
 
 
     [Header("Bullets")]
     public GameObject bossBullet; //Dangerous Falling Bullets
     public GameObject fallingSlime; //Healing Falling Bullets
-    private float bulletBarrage = 1;
+    public float bulletBarrage = 1;
     public GameObject bulletSpawner1;
     public GameObject bulletSpawner2;
     public GameObject bulletSpawner3;
@@ -30,7 +30,6 @@ public class BossMoves : MonoBehaviour
 
 
     [Header("Summon")]
-    public GameObject detectionSquare;
     public GameObject enemyMelee;
     public GameObject enemyRanged;
     public GameObject enemyTurret;
@@ -106,7 +105,7 @@ public class BossMoves : MonoBehaviour
 
         //Phase Two
 
-        if (health <= 5)
+        if (health <= 10)
         {
             phaseTwo = true;
         }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1172438292979731404}
   - component: {fileID: 4454298589559193748}
   - component: {fileID: 3799883057827891649}
-  - component: {fileID: -3256167144638625469}
+  - component: {fileID: 4813575345712721392}
   m_Layer: 0
   m_Name: BossBullet
   m_TagString: EnemyBullet
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-3256167144638625469
+--- !u!114 &4813575345712721392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3760bd177932a6143865c75d976e65d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossMoves: {fileID: 0}
   speed: 3
   lifeTime: 8
   damage: 1
