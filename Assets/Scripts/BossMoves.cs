@@ -16,6 +16,8 @@ public class BossMoves : MonoBehaviour
     public GameObject bossBullet; //Dangerous Falling Bullets
     public GameObject fallingSlime; //Healing Falling Bullets
     public float bulletBarrage = 1;
+
+    [Header("Downward Bullet Spawner")]
     public GameObject bulletSpawner1;
     public GameObject bulletSpawner2;
     public GameObject bulletSpawner3;
@@ -26,6 +28,26 @@ public class BossMoves : MonoBehaviour
     public GameObject bulletSpawner8;
     public GameObject bulletSpawner9;
     public GameObject bulletSpawner10;
+
+    [Header("Left Bullet Spawner")]
+    public GameObject leftBulletSpawner1;
+    public GameObject leftBulletSpawner2;
+    public GameObject leftBulletSpawner3;
+    public GameObject leftBulletSpawner4;
+    public GameObject leftBulletSpawner5;
+    public GameObject leftBulletSpawner6;
+    public GameObject leftBulletSpawner7;
+    public GameObject leftBulletSpawner8;
+
+    [Header("Right Bullet Spawner")]
+    public GameObject rightBulletSpawner1;
+    public GameObject rightBulletSpawner2;
+    public GameObject rightBulletSpawner3;
+    public GameObject rightBulletSpawner4;
+    public GameObject rightBulletSpawner5;
+    public GameObject rightBulletSpawner6;
+    public GameObject rightBulletSpawner7;
+    public GameObject rightBulletSpawner8;
 
 
     [Header("Summon")]
@@ -52,7 +74,8 @@ public class BossMoves : MonoBehaviour
 
 
         //Phase One
-        if (recharge <= 0 && phaseOne == true && bulletBarrage == 1 || recharge <= 0 && phaseOne == true && bulletBarrage == 4) // Spawn a barrage of bullets on the left side
+        //Downward Bullets
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 1 || recharge <= 0 && phaseOne == true && bulletBarrage == 4) // Spawn a barrage of bullets on the upper left side
         {
             Instantiate(bossBullet, bulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(bossBullet, bulletSpawner2.transform.position, Quaternion.identity);
@@ -63,7 +86,7 @@ public class BossMoves : MonoBehaviour
             bulletBarrage++;
         }
 
-        if (recharge <= 0 && phaseOne == true && bulletBarrage == 2 || recharge <= 0 && phaseOne == true && bulletBarrage == 5) // Spawn a barrage of bullets on the right side
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 2 || recharge <= 0 && phaseOne == true && bulletBarrage == 5) // Spawn a barrage of bullets on the upper right side
         {
             Instantiate(bossBullet, bulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(bossBullet, bulletSpawner7.transform.position, Quaternion.identity);
@@ -74,7 +97,51 @@ public class BossMoves : MonoBehaviour
             bulletBarrage++;
         }
 
-        if (recharge <= 0 && phaseOne == true && bulletBarrage == 3) // Spawn a barrage of falling healing slimes on the left side
+        //Left Bullets
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 7) // Spawn a barrage of bullets on the upper left side
+        {
+            Instantiate(bossBullet, leftBulletSpawner1.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, leftBulletSpawner2.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, leftBulletSpawner3.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, leftBulletSpawner4.transform.position, Quaternion.identity);
+            recharge = spawnTimeRate;
+            bulletBarrage++;
+        }
+
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 8) // Spawn a barrage of bullets on the upper right side
+        {
+            Instantiate(bossBullet, leftBulletSpawner5.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, leftBulletSpawner6.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, leftBulletSpawner7.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, leftBulletSpawner8.transform.position, Quaternion.identity);
+            recharge = spawnTimeRate;
+            bulletBarrage++;
+        }
+
+        //Right Bullets
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 10) // Spawn a barrage of bullets on the upper left side
+        {
+            Instantiate(bossBullet, rightBulletSpawner1.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, rightBulletSpawner2.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, rightBulletSpawner3.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, rightBulletSpawner4.transform.position, Quaternion.identity);
+            recharge = spawnTimeRate;
+            bulletBarrage++;
+        }
+
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 11) // Spawn a barrage of bullets on the upper right side
+        {
+            Instantiate(bossBullet, rightBulletSpawner5.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, rightBulletSpawner6.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, rightBulletSpawner7.transform.position, Quaternion.identity);
+            Instantiate(bossBullet, rightBulletSpawner8.transform.position, Quaternion.identity);
+            recharge = spawnTimeRate;
+            bulletBarrage++;
+        }
+
+
+        //Healing Slime
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 3 || recharge <= 0 && phaseOne == true && bulletBarrage == 9) // Spawn a barrage of falling healing slimes on the upper left side
         {
             Instantiate(fallingSlime, bulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner2.transform.position, Quaternion.identity);
@@ -85,7 +152,7 @@ public class BossMoves : MonoBehaviour
             bulletBarrage++;
         }
 
-        if (recharge <= 0 && phaseOne == true && bulletBarrage == 6) // Spawn a barrage of falling healing slimes on the right side
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 6 || recharge <= 0 && phaseOne == true && bulletBarrage == 12) // Spawn a barrage of falling healing slimes on the upper right side
         {
             Instantiate(fallingSlime, bulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner7.transform.position, Quaternion.identity);
@@ -93,9 +160,13 @@ public class BossMoves : MonoBehaviour
             Instantiate(fallingSlime, bulletSpawner9.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner10.transform.position, Quaternion.identity);
             recharge = spawnTimeRate;
-            bulletBarrage = 1;
+            bulletBarrage++;
         }
 
+        if (bulletBarrage >= 12)
+        {
+            bulletBarrage = 1;
+        }
 
         //Phase Two
 

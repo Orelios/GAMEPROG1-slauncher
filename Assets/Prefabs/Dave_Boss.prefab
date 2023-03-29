@@ -252,6 +252,14 @@ MonoBehaviour:
   bulletSpawner8: {fileID: 0}
   bulletSpawner9: {fileID: 0}
   bulletSpawner10: {fileID: 0}
+  leftBulletSpawner1: {fileID: 0}
+  leftBulletSpawner2: {fileID: 0}
+  leftBulletSpawner3: {fileID: 0}
+  leftBulletSpawner4: {fileID: 0}
+  leftBulletSpawner5: {fileID: 0}
+  leftBulletSpawner6: {fileID: 0}
+  leftBulletSpawner7: {fileID: 0}
+  leftBulletSpawner8: {fileID: 0}
   enemyMelee: {fileID: 1077583990037259617, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
   enemyRanged: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
   enemyTurret: {fileID: 2629618053270463514, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
