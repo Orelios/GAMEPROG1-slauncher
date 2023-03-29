@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
-    guid: e2ada0781d7a9ca40873a824d090008c
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Castle Level.unity
-    guid: 8e6e5e0619ea13344950fbf26103e3e2
+    path: Assets/Scenes/GameOverScreen.unity
+    guid: a6b0f44d602cbc34f986edc39e893738
   - enabled: 1
-    path: Assets/Scenes/Forest Level.unity
-    guid: 1a4ea413768daf346899d3bde82e8439
+    path: Assets/Scenes/Slauncher.unity
+    guid: 2d9c1ac651db72d41b2e1cac16df859d
   m_configObjects: {}
