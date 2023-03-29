@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class BossBullet : MonoBehaviour
 {
     private GameObject player; //Used to search fo the player
     private Rigidbody2D rb; //Used for physics
     public float speed = 3.0f; //Determines how fast the bullet travels
-    public float lifeTime = 8.0f; //Determines how long the bullet last
+    public float lifeTime = 15.0f; //Determines how long the bullet last
     public float damage = 1.0f; //Determines how much damage the bullet has
 
     // Start is called before the first frame update
@@ -15,10 +15,11 @@ public class EnemyBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(this.gameObject, lifeTime); //Destroy the object
-        player = GameObject.FindGameObjectWithTag("Player"); //Defines the tag of the player
+        /*player = GameObject.FindGameObjectWithTag("Player"); //Defines the tag of the player
 
         Vector3 direction = player.transform.position - transform.position; //Searches the player's position
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed; //Bullet goes straight to player
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed; //Bullet goes straight to player*/
+        rb.velocity = new Vector2(0, -1).normalized * speed;
     }
 
     void OnTriggerEnter2D(Collider2D collider)

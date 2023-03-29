@@ -11,6 +11,7 @@ TagManager:
   - PoolOfWater
   - PlayerBullet
   - Wall
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

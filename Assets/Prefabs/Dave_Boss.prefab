@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3666266726240484524}
   - component: {fileID: 3666266726240484529}
   - component: {fileID: 7660153662434201514}
-  - component: {fileID: -8584086778165029520}
+  - component: {fileID: 6101645804590837322}
   m_Layer: 3
   m_Name: Dave_Boss
   m_TagString: Enemy
@@ -36,7 +36,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1067467748530261004}
-  - {fileID: 5196918684890739188}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,7 +183,7 @@ MonoBehaviour:
   enemyBullet: {fileID: 4250709382161617115, guid: c59ddb1af6148984896103e65636f779, type: 3}
   fireRate: 3
   atkRange: 5
---- !u!114 &-8584086778165029520
+--- !u!114 &6101645804590837322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,44 +192,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3666266726240484522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c251ed6cf46cb5a408214985e99034b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c8a030fc1da1964381df51136bb53a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMelee: {fileID: 1077583990037259617, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
-  enemyRanged: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
-  enemyTurret: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
-  spawner: {fileID: 7002154570413419681}
---- !u!1 &7002154570413419681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5196918684890739188}
-  m_Layer: 3
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5196918684890739188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002154570413419681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3666266726240484528}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  enemyMelee: {fileID: 0}
+  enemyRanged: {fileID: 0}
+  enemyTurret: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!1 &8624261817088033041
 GameObject:
   m_ObjectHideFlags: 0
