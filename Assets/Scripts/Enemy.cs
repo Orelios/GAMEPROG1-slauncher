@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public float health = 1.0f;
     public float maxHealth = 1.0f;
-    public float collisionDamage = 1.0f;
     public GameObject droppableSlime; 
     // Start is called before the first frame update
     void Start()

@@ -6,7 +6,6 @@ public class BossMoves : MonoBehaviour
 {
     private bool phaseOne = true;
     private bool phaseTwo = false;
-    private bool phaseThree = false;
 
     [Header("Dave")]
     public float health = 15.0f;
@@ -40,11 +39,6 @@ public class BossMoves : MonoBehaviour
     public GameObject enemySpawner4;
     private float recharge = 0.0f;
     private float spawnTimeRate = 5.0f;
-
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -80,7 +74,7 @@ public class BossMoves : MonoBehaviour
             bulletBarrage++;
         }
 
-        if (recharge <= 0 && phaseOne == true && bulletBarrage == 3) // Spawn a barrage of falling slimes on the left side
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 3) // Spawn a barrage of falling healing slimes on the left side
         {
             Instantiate(fallingSlime, bulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner2.transform.position, Quaternion.identity);
@@ -91,7 +85,7 @@ public class BossMoves : MonoBehaviour
             bulletBarrage++;
         }
 
-        if (recharge <= 0 && phaseOne == true && bulletBarrage == 6) // Spawn a barrage of falling slimes on the right side
+        if (recharge <= 0 && phaseOne == true && bulletBarrage == 6) // Spawn a barrage of falling healing slimes on the right side
         {
             Instantiate(fallingSlime, bulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner7.transform.position, Quaternion.identity);
@@ -110,7 +104,7 @@ public class BossMoves : MonoBehaviour
             phaseTwo = true;
         }
 
-        if(phaseTwo == true && summonAble == true)
+        if(phaseTwo == true && summonAble == true) //Summons mobs after taking a certain amount of damage
         {
             Instantiate(enemyMelee, enemySpawner1.transform.position, Quaternion.identity);
             Instantiate(enemyMelee, enemySpawner2.transform.position, Quaternion.identity);
@@ -121,9 +115,9 @@ public class BossMoves : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) //Checks if it gets hit by the player bullet
     {
-        if (other.tag == "PlayerBullet")
+        if (other.tag == "PlayerBullet") 
         {
             health -= 1.0f;
         }

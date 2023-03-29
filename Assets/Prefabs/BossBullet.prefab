@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossMoves: {fileID: 0}
   speed: 3
-  lifeTime: 8
+  lifeTime: 15
   damage: 1

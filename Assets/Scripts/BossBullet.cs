@@ -9,7 +9,6 @@ public class BossBullet : MonoBehaviour
     private Rigidbody2D rb; //Used for physics
     public float speed = 3.0f; //Determines how fast the bullet travels
     public float lifeTime = 15.0f; //Determines how long the bullet last
-    public float damage = 1.0f; //Determines how much damage the bullet has
 
     // Start is called before the first frame update
     void Start()
