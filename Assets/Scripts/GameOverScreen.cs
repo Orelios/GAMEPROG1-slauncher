@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System; 
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -17,6 +18,18 @@ public class GameOverScreen : MonoBehaviour
     void Start()
     {
         totalTime = Timer.time;
+        try
+        {
+            loadHighScore(); 
+        }
+        catch 
+        {
+            saveHighScore.highScore = totalTime;
+            string HighScoreData = JsonUtility.ToJson(saveHighScore);
+            string filePath = Application.dataPath + "/StreamingAssets";
+            File.WriteAllText(filePath, HighScoreData);
+        }
+
     }
 
     void Update()
@@ -28,34 +41,21 @@ public class GameOverScreen : MonoBehaviour
     }
 
     private void Highscore()
-    {
-        if(saveHighScore.highScore == 0)
-        {
-            saveHighScore.highScore = totalTime;
-            string HighScoreData = JsonUtility.ToJson(saveHighScore);
-            string filePath = Application.persistentDataPath + "/HighScoreData.json";
-            //Debug.Log(filePath);
-            File.WriteAllText(filePath, HighScoreData);
-            //Debug.Log("Save method has been read");
-        }
+    {     
         if (totalTime < highScore)
         {
             saveHighScore.highScore = totalTime; 
             string HighScoreData = JsonUtility.ToJson(saveHighScore);
-            string filePath = Application.persistentDataPath + "/HighScoreData.json";
-            //Debug.Log(filePath);
+            string filePath = Application.dataPath + "/StreamingAssets";
             File.WriteAllText(filePath, HighScoreData);
-            //Debug.Log("Save method has been read"); 
-
         }
     }
 
     private void loadHighScore()
     {
-        string filePath = Application.persistentDataPath + "/HighScoreData.json";
+        string filePath = Application.dataPath + "/StreamingAssets";
         string HighScoreData = File.ReadAllText(filePath);
         saveHighScore = JsonUtility.FromJson<SaveHighScore>(HighScoreData);
-        //Debug.Log("Data Loaded");
         highScore = saveHighScore.highScore; 
         highScoreText.text = "High Score: " + highScore.ToString("0.00");
     }

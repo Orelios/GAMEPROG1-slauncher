@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class SaveHighScore 
 {
-    public float highScore; 
+    public float highScore;
+    public float firstLoad = 100; 
 }
