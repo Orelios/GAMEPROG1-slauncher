@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossMoves : MonoBehaviour
 {
-    private bool phaseOne = true;
-    private bool phaseTwo = false;
+    private bool phaseOne = false;
+    private bool phaseTwo = true;
     private bool phaseThree = false;
 
     [Header("Bullets")]
@@ -23,12 +23,16 @@ public class BossMoves : MonoBehaviour
     public GameObject bulletSpawner9;
     public GameObject bulletSpawner10;
 
-    [Header("Summon Enemies")]
+
+    [Header("Summon")]
+    private bool summonAble = true;
     public GameObject enemyMelee;
     public GameObject enemyRanged;
     public GameObject enemyTurret;
     public GameObject enemySpawner1;
     public GameObject enemySpawner2;
+    public GameObject enemySpawner3;
+    public GameObject enemySpawner4;
     private float recharge = 0.0f;
     private float spawnTimeRate = 5.0f;
 
@@ -92,5 +96,22 @@ public class BossMoves : MonoBehaviour
             recharge = spawnTimeRate;
             bulletBarrage = 1;
         }
+
+
+        //Phase Two
+
+        if(recharge <= 0 && phaseTwo == true && summonAble == true)
+        {
+            Instantiate(enemyMelee, enemySpawner1.transform.position, Quaternion.identity);
+            Instantiate(enemyMelee, enemySpawner2.transform.position, Quaternion.identity);
+            Instantiate(enemyTurret, enemySpawner3.transform.position, Quaternion.identity);
+            Instantiate(enemyTurret, enemySpawner4.transform.position, Quaternion.identity);
+            recharge = spawnTimeRate;
+            summonAble = false;
+        }
+
     }
+
+
+
 }

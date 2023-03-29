@@ -17,13 +17,4 @@ public class BossSlime : MonoBehaviour
 
         rb.velocity = new Vector2(0, -1).normalized * speed;
     }
-
-    void OnTriggerStay2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Player" && collider.GetComponent<Player>().canPickUp == true)
-        {
-            Destroy(this.gameObject);
-        }
-
-    }
 }

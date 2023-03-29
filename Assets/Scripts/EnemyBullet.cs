@@ -27,10 +27,5 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        if (collider.gameObject.tag == "Platform")
-        {
-            Destroy(this.gameObject);
-        }
     }
 }
