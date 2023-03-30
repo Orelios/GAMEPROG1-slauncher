@@ -73,9 +73,18 @@ public class Player : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name + "has stayed on trigger");
-        if(other.gameObject.tag == "Slime" && canPickUp == true)
+        if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true)
         {
-            health += 1.0f;
+            if (other.gameObject.tag == "Slime")
+            {
+                health += 1.0f;
+            }
+
+            if (other.gameObject.tag == "DroppedSlime")
+            {
+                health += 2.0f;
+            }
+
             if(health >= maxHealth) //prevents from overcapping
             {
                 health = maxHealth;
@@ -104,9 +113,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) //Used to make i-frames after taking damage from enemies
     {
-        if (other.gameObject.tag == "Enemy" && damageAble == true)
+        if (other.gameObject.tag == "Enemy" && damageAble == true || other.gameObject.tag == "EnemyBullet" && damageAble == true || other.gameObject.tag == "Boss" && damageAble == true)
         {
-            health -= other.GetComponent<Enemy>().collisionDamage;
+            health -= 1;
             invulCooldownTimer = invulCooldown;
             damageAble = false;
         }

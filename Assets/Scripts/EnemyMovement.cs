@@ -35,8 +35,12 @@ public class EnemyMovement : MonoBehaviour
         return transform.localScale.x > Mathf.Epsilon;
     }
 
-    private void OnTriggerExit2D(Collider2D collision) //If the collider doesn't collide with anything, it will flip
+    private void OnTriggerExit2D(Collider2D collision) //If the collider is not colliding with a platform
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
+        if (collision.tag == "Platform")
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
+        }
     }
+
 }

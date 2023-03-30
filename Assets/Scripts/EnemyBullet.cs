@@ -7,7 +7,7 @@ public class EnemyBullet : MonoBehaviour
     private GameObject player; //Used to search fo the player
     private Rigidbody2D rb; //Used for physics
     public float speed = 3.0f; //Determines how fast the bullet travels
-    public float lifeTime = 3.0f; //Determines how long the bullet last
+    public float lifeTime = 15.0f; //Determines how long the bullet last
     public float damage = 1.0f; //Determines how much damage the bullet has
 
     // Start is called before the first frame update
@@ -25,9 +25,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player" && collider.GetComponent<Player>().damageAble == true)
         {
-            collider.GetComponent<Player>().health -= damage;
             Destroy(this.gameObject);
         }
-
     }
 }

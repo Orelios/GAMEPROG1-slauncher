@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 100010201}
   m_Layer: 6
   m_Name: Platform (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 1092773522}
   m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 1115752515}
   m_Layer: 6
   m_Name: Platform (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1787,7 +1787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2756235131036040105, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.86
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 2756235131036040105, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 1696214643}
   m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2385,7 +2385,7 @@ GameObject:
   - component: {fileID: 1810781109}
   m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
