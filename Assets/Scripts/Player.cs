@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public bool damageAble = true;
     // Checks if the player can be damaged
 
-    public int resizeTrue; 
+    public int resizeTrue = 1; 
 
     // Start is called before the first frame update
     void Start()
