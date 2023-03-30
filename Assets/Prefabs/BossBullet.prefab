@@ -148,4 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossMoves: {fileID: 0}
   speed: 5
-  lifeTime: 15
+  lifeTime: 10

@@ -6,6 +6,7 @@ public class BossMoves : MonoBehaviour
 {
     private bool phaseOne = true;
     private bool phaseTwo = false;
+    private bool phaseThree = false;
 
     [Header("Dave")]
     public float health = 15.0f;
@@ -16,6 +17,8 @@ public class BossMoves : MonoBehaviour
     public GameObject bossBullet; //Dangerous Falling Bullets
     public GameObject fallingSlime; //Healing Falling Bullets
     public float bulletBarrage = 1;
+    private float recharge = 0.0f;
+    private float spawnTimeRate = 5.0f;
 
     [Header("Downward Bullet Spawner")]
     public GameObject bulletSpawner1;
@@ -59,8 +62,13 @@ public class BossMoves : MonoBehaviour
     public GameObject enemySpawner2;
     public GameObject enemySpawner3;
     public GameObject enemySpawner4;
-    private float recharge = 0.0f;
-    private float spawnTimeRate = 5.0f;
+    public GameObject enemySpawner5;
+    public GameObject enemySpawner6;
+
+
+    [Header("Pool of Water")]
+    public GameObject poolOfWater;
+    private bool activateAbleWater = true;
 
     // Update is called once per frame
     void Update()
@@ -181,8 +189,23 @@ public class BossMoves : MonoBehaviour
             Instantiate(enemyMelee, enemySpawner2.transform.position, Quaternion.identity);
             Instantiate(enemyTurret, enemySpawner3.transform.position, Quaternion.identity);
             Instantiate(enemyTurret, enemySpawner4.transform.position, Quaternion.identity);
+            Instantiate(enemyTurret, enemySpawner5.transform.position, Quaternion.identity);
+            Instantiate(enemyTurret, enemySpawner6.transform.position, Quaternion.identity);
             recharge = spawnTimeRate;
             summonAble = false;
+        }
+
+        //Phase Three
+
+        if (health <= 5)
+        {
+            phaseThree = true;
+        }
+
+        if (phaseThree == true && activateAbleWater == true)
+        {
+            poolOfWater.SetActive(true);
+            activateAbleWater = false;
         }
     }
 
