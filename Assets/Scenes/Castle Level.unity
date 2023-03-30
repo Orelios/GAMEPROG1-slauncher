@@ -649,7 +649,7 @@ Transform:
   - {fileID: 813781917}
   - {fileID: 995676680}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &797301449
 GameObject:
@@ -32493,6 +32493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UserInterface
       objectReference: {fileID: 0}
+    - target: {fileID: 4685085514667705194, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -471193837
+      objectReference: {fileID: 0}
     - target: {fileID: 4685085514667705195, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -32771,7 +32775,7 @@ Transform:
   - {fileID: 2106378294}
   - {fileID: 961483055}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1348934336
 PrefabInstance:
@@ -33404,7 +33408,7 @@ Transform:
   - {fileID: 1562166614}
   - {fileID: 1053292374}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1984810035 stripped
 Transform:
