@@ -3271,6 +3271,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1071860344959199458, guid: fcd6ef8e378d45344ba721acbe45c728, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1561910157383645474, guid: fcd6ef8e378d45344ba721acbe45c728, type: 3}
       propertyPath: m_Name
       value: PlayerBullet
