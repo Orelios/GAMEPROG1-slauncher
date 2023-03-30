@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -9,7 +9,34 @@ public class SceneLoader : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOverScreen"); 
+            SceneManager.LoadScene("GameOverScreen");
         }
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Player has exit the game");
+    }
+
+    /*
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }*/
+
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void PlayNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
