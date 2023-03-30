@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.5
-  max_Y: 5.5
-  min_Y: -5.5
-  max_X: 11.7
-  min_X: -11.7
+  max_Y: 100
+  min_Y: -100
+  max_X: 100
+  min_X: -100
 --- !u!50 &-251966351160066381
 Rigidbody2D:
   serializedVersion: 4
