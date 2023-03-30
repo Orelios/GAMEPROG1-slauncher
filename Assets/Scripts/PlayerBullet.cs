@@ -15,15 +15,22 @@ public class PlayerBullet : MonoBehaviour
     public float fieldOfImpact;
     public float force;
     public LayerMask layer;
+    public GameObject explosion;
 
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        ScaleExplosion();
 
         Destroy(this.gameObject, lifeTime);
         InitializeBullet();
+    }
+
+    void ScaleExplosion()
+    {
+        explosion.transform.localScale += new Vector3(fieldOfImpact * 2, fieldOfImpact * 2, 0);
     }
 
     void InitializeBullet()
@@ -50,7 +57,7 @@ public class PlayerBullet : MonoBehaviour
             || collider.gameObject.layer == slaunchableLayerNum)
         {
             Explode();
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.3f);
 
             if (collider.gameObject.tag == "Slime")
             {
@@ -61,9 +68,12 @@ public class PlayerBullet : MonoBehaviour
 
     private void Explode()
     {
-        var objects = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, layer);
+        explosion.SetActive(true);
+        rb.velocity = new Vector2(0, 0);
 
-        foreach (var obj in objects)
+        var objectsNearby = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, layer);
+
+        foreach (var obj in objectsNearby)
         {
             Vector2 velocity = (obj.transform.position - transform.position).normalized * force;
             obj.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -71,10 +81,11 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    /* Note: Doesn't show accurate range
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, fieldOfImpact);
     }
-
+    */
 }
