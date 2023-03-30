@@ -7,6 +7,9 @@ public class PlayerBullet : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
+    private Vector3 direction;
+    private Vector3 rotation;
+
     public float bulletSpeed;
     public float lifeTime;
     private int slaunchableLayerNum = 3;
@@ -26,24 +29,6 @@ public class PlayerBullet : MonoBehaviour
 
         Destroy(this.gameObject, lifeTime);
         InitializeBullet();
-    }
-
-    void ScaleExplosion()
-    {
-        explosion.transform.localScale += new Vector3(fieldOfImpact * 2, fieldOfImpact * 2, 0);
-    }
-
-    void InitializeBullet()
-    {
-        Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
-
-        // Velocity
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * bulletSpeed;
-
-        // Rotation
-        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -66,19 +51,47 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
+    private void InitializeBullet()
+    {
+        GetDirection();
+        rotation = transform.position - mousePos;
+        rb.velocity = Get2DVelocity(bulletSpeed);
+
+        // Rotate bullet
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+    }
+
     private void Explode()
     {
-        explosion.SetActive(true);
         rb.velocity = new Vector2(0, 0);
+        explosion.SetActive(true);
 
+        // Launch gameObjects nearby
         var objectsNearby = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, layer);
 
         foreach (var obj in objectsNearby)
         {
-            Vector2 velocity = (obj.transform.position - transform.position).normalized * force;
-            obj.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            Vector2 velocity = -(Get2DVelocity(force));
             obj.GetComponent<Rigidbody2D>().AddForce(velocity);
         }
+    }
+
+    // [ COMPUTATIONS ] ============================================================================
+    private void ScaleExplosion()
+    {
+        explosion.transform.localScale += new Vector3(fieldOfImpact * 2, fieldOfImpact * 2, 0);
+    }
+
+    private void GetDirection()
+    {
+        direction = mousePos - transform.position;
+    }
+
+    private Vector2 Get2DVelocity(float speed)
+    {
+        Vector2 velocity = new Vector2(direction.x, direction.y).normalized * speed;
+        return velocity;
     }
 
     /* Note: Doesn't show accurate range
