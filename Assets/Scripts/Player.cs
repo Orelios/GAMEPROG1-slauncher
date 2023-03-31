@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     public bool damageAble = true;
     // Checks if the player can be damaged
 
-    public int resizeTrue = 1; 
+    public int resizeTrue = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -78,8 +78,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        //Debug.Log(other.gameObject.name + "has stayed on trigger");
-        if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true)
+        // Debug.Log(other.gameObject.name + "has stayed on trigger");
+        if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true || other.gameObject.tag == "Resupply" && canPickUp == true)
         {
             if (other.gameObject.tag == "Slime")
             {
@@ -89,6 +89,11 @@ public class Player : MonoBehaviour
             if (other.gameObject.tag == "DroppedSlime")
             {
                 health += 2.0f;
+            }
+
+            if (other.gameObject.tag == "Resupply")
+            {
+                health = maxHealth;
             }
 
             if(health >= maxHealth) //prevents from overcapping
@@ -141,13 +146,13 @@ public class Player : MonoBehaviour
             {
                 xScale = smallScale;
                 yScale = smallScale;
-             
+
             }
             else if (health > smallHealth && health <= mediumHealth)
             {
                 xScale = mediumScale;
                 yScale = mediumScale;
-              
+
             }
             else if (health > mediumHealth && health <= largeHealth)
             {

@@ -18,6 +18,7 @@ TagManager:
   - WarpNext
   - WarpPrevious
   - SC4
+  - Resupply
   layers:
   - Default
   - TransparentFX
@@ -66,6 +67,9 @@ TagManager:
     locked: 0
   - name: Overprop
     uniqueID: 2684803369
+    locked: 0
+  - name: Enemy
+    uniqueID: 234986155
     locked: 0
   - name: Player
     uniqueID: 1561599571

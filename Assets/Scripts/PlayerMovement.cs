@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb; //Used to determine the rigidbody of the Player Sprite
     [SerializeField] private Transform groundCheck; //Used to determine the GroundCheck Object below the player. The object is used to determine if its colliding anything below it
+    [SerializeField] private Transform ceilingCheck; //Used to determine the CeilingCheck Object above the player. The object is used to determine if its colliding anything above it
     [SerializeField] private LayerMask groundLayer; //Used to determine which object layer it will check. The object layer that we will use is "Ground"
     [SerializeField] private SpriteRenderer spriteSlauncher; // Used to reference the Slauncher sprite.
     
@@ -86,6 +87,11 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
 
+        if (isCeiling())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -2);
+        }
+
         UpdateAnimationState();
     }
 
@@ -114,6 +120,11 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private bool isCeiling()
+    {
+        return Physics2D.OverlapCircle(ceilingCheck.position, 0.2f, groundLayer);
     }
 
     //Used to determine the cooldown of the jumps

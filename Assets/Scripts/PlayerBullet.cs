@@ -80,7 +80,7 @@ public class PlayerBullet : MonoBehaviour
     // [ COMPUTATIONS ] ============================================================================
     private void ScaleExplosion()
     {
-        explosion.transform.localScale += new Vector3(fieldOfImpact * 2, fieldOfImpact * 2, 0);
+        explosion.transform.localScale += new Vector3(fieldOfImpact * 1, fieldOfImpact * 1, 0);
     }
 
     private void GetDirection()

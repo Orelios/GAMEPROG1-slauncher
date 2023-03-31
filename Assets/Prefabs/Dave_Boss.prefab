@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 3666266726240484524}
   - component: {fileID: 3666266726240484529}
   - component: {fileID: 6101645804590837322}
+  - component: {fileID: 1424679418558427546}
   m_Layer: 3
   m_Name: Dave_Boss
   m_TagString: Enemy
@@ -164,11 +165,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 234986155
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
-  m_Color: {r: 0.9529412, g: 0.28235295, b: 0.28235295, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a9111a6a28f80f243810a9be36f5a2c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -191,18 +192,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.062046707, y: -0.82279336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8828125, y: 1}
+    oldSize: {x: 4, y: 2.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8759066, y: 0.87590647}
   m_EdgeRadius: 0
 --- !u!50 &3666266726240484529
 Rigidbody2D:
@@ -260,6 +261,14 @@ MonoBehaviour:
   leftBulletSpawner6: {fileID: 0}
   leftBulletSpawner7: {fileID: 0}
   leftBulletSpawner8: {fileID: 0}
+  rightBulletSpawner1: {fileID: 0}
+  rightBulletSpawner2: {fileID: 0}
+  rightBulletSpawner3: {fileID: 0}
+  rightBulletSpawner4: {fileID: 0}
+  rightBulletSpawner5: {fileID: 0}
+  rightBulletSpawner6: {fileID: 0}
+  rightBulletSpawner7: {fileID: 0}
+  rightBulletSpawner8: {fileID: 0}
   enemyMelee: {fileID: 1077583990037259617, guid: 58a340fdf32fcad4781b7e5e5005a1ca, type: 3}
   enemyRanged: {fileID: 5562853186801021, guid: ae1fbf537ee59c24e9e71e25021fdb40, type: 3}
   enemyTurret: {fileID: 2629618053270463514, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
@@ -267,6 +276,29 @@ MonoBehaviour:
   enemySpawner2: {fileID: 0}
   enemySpawner3: {fileID: 0}
   enemySpawner4: {fileID: 0}
+  enemySpawner5: {fileID: 0}
+  enemySpawner6: {fileID: 0}
+  poolOfWater: {fileID: 0}
+--- !u!95 &1424679418558427546
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3666266726240484522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 931f4c9d6d15fef4689a38bab895c3cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4895887351463697821
 GameObject:
   m_ObjectHideFlags: 0

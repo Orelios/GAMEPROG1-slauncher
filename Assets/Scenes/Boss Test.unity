@@ -4334,6 +4334,37 @@ Transform:
   m_Father: {fileID: 222399506}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2016537331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016537332}
+  m_Layer: 0
+  m_Name: CeilingCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2016537332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016537331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 112767238}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047807588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,5 +4804,9 @@ PrefabInstance:
       propertyPath: resizeTrue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4989560133765878014, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
+      propertyPath: ceilingCheck
+      value: 
+      objectReference: {fileID: 2016537332}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
