@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6413676178444972731}
   - component: {fileID: 6413676178444972677}
   m_Layer: 0
-  m_Name: ForwardWarp
+  m_Name: Warp
   m_TagString: WarpNext
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
