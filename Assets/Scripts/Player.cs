@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         if (PlayerPrefs.HasKey ("savedSc4")) //checks if PlayerPrefs has a variable called "savedSc4"
         {
             sc4 = PlayerPrefs.GetInt ("savedSc4"); //takes value of savedSc4 and puts it into sc4
+            Debug.Log("savedSc4 = " + PlayerPrefs.GetInt ("savedSc4"));
         }
     }
 
@@ -77,7 +78,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name + "has stayed on trigger");
+        //Debug.Log(other.gameObject.name + "has stayed on trigger");
         if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true)
         {
             if (other.gameObject.tag == "Slime")
@@ -108,7 +109,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other) //Picking up ally slimes in world
     {
-        Debug.Log(other.gameObject.name + "has stayed on trigger");
+        //Debug.Log(other.gameObject.name + "has stayed on trigger");
         if (other.gameObject.tag == "Ally Slime" && canPickUp == true)
         {
             health += 1.0f;
@@ -154,6 +155,14 @@ public class Player : MonoBehaviour
                 yScale = largeScale;
             }
             transform.localScale = new Vector3(xScale, yScale, zScale);
+        }
+    }
+
+    void OnDisable()
+    {
+        if (PlayerPrefs.HasKey ("savedSc4")) //checks if PlayerPrefs has a variable called "savedSc4"
+        {
+            //PlayerPrefs.SetInt("savedSc4", 0);
         }
     }
 }
