@@ -29,6 +29,7 @@ public class SceneLoader : MonoBehaviour
     public void PlayGame()
     {
         GoToSpecifiedScene(StartingSceneString);
+        PlayerPrefs.SetInt("savedSc4", 0); //resets value of PlayerPrefs "savedSc4"
     }
 
     public void ExitGame()

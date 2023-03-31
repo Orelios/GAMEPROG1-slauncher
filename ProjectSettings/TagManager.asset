@@ -17,6 +17,7 @@ TagManager:
   - Ally Slime
   - WarpNext
   - WarpPrevious
+  - SC4
   - Resupply
   layers:
   - Default
@@ -74,5 +75,5 @@ TagManager:
     uniqueID: 1561599571
     locked: 0
   - name: UI
-    uniqueID: 3782152329
+    uniqueID: 3823773459
     locked: 0

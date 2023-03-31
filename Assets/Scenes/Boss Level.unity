@@ -19113,7 +19113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4685085514667705194, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
       propertyPath: m_SortingLayerID
-      value: -512814967
+      value: -471193837
       objectReference: {fileID: 0}
     - target: {fileID: 4685085514667705205, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
       propertyPath: m_Pivot.x
