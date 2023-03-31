@@ -50,6 +50,10 @@ public class PlayerBullet : MonoBehaviour
             {
                 Destroy(collider.gameObject);
             }
+            if (collider.gameObject.tag == "Jail")
+            {
+                Destroy(collider.gameObject);
+            }
         }
     }
 
