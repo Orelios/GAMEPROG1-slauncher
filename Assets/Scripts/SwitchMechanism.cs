@@ -20,7 +20,7 @@ public class SwitchMechanism : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(yMove < 0 && playerSwitch.active == true && horizontal == false)
+        if(yMove < 0 && playerSwitch.active == true)
         {
             if(transform.position.y > desiredYPosition)
             {
