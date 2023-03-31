@@ -12,6 +12,9 @@ public class SwitchMechanism : MonoBehaviour
     private float desiredYPosition;
     private float desiredXPosition;
     // Start is called before the first frame update
+
+    [SerializeField] private AudioSource gateSoundEffect;
+
     void Start()
     {
         desiredYPosition = transform.position.y + yMove;
@@ -22,6 +25,7 @@ public class SwitchMechanism : MonoBehaviour
     {
         if(yMove < 0 && playerSwitch.active == true)
         {
+            gateSoundEffect.Play();
             if(transform.position.y > desiredYPosition)
             {
                 //transform.position += new Vector3(0, moveVelocity * Time.deltaTime, 0);

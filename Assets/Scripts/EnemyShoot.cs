@@ -10,6 +10,8 @@ public class EnemyShoot : MonoBehaviour
     public float fireRate = 3.0f; //Cooldown of shooting
     public float atkRange = 5.0f; //Defines the detection of the Enemy
 
+    [SerializeField] private AudioSource slingSoundEffect;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +34,7 @@ public class EnemyShoot : MonoBehaviour
 
             if (recharge <= 0)
             {
+                slingSoundEffect.Play();
 
                 Instantiate(enemyBullet, transform.position, Quaternion.identity); //Spawn bullet
                 recharge = fireRate; //Reset the variable

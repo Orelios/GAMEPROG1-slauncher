@@ -9,6 +9,9 @@ public class Spawn : MonoBehaviour
     private Animator anim; //Used to reference parameters from the animator
     private Rigidbody2D rb;
 
+    [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private AudioSource respawnSoundEffect;
+
 
     void Start()
     {
@@ -42,6 +45,7 @@ public class Spawn : MonoBehaviour
 
     private void Respawn()
     {
+        respawnSoundEffect.Play();
         player.health = player.maxHealth;
         transform.position = checkPointPos;
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -50,6 +54,7 @@ public class Spawn : MonoBehaviour
 
     private void Die()
     {
+        deathSoundEffect.Play();
         anim.SetBool("death", true);
         rb.bodyType = RigidbodyType2D.Static;
     }

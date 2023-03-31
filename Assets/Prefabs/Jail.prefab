@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5379534214260263402}
   - component: {fileID: 6467324413873862635}
   - component: {fileID: 6730608999627430001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jail
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4989560133765878011, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
-  allySlime: {fileID: 0}
+  allySlime: {fileID: -243611922354502133, guid: 82c7b852b6f5ee74197e4a3c9f4cc913, type: 3}
   AllySlime: {fileID: 3814644955203558823, guid: 82c7b852b6f5ee74197e4a3c9f4cc913, type: 3}
   amtOfSlimes: 3
 --- !u!61 &6730608999627430001

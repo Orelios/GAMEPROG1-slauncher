@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform ceilingCheck; //Used to determine the CeilingCheck Object above the player. The object is used to determine if its colliding anything above it
     [SerializeField] private LayerMask groundLayer; //Used to determine which object layer it will check. The object layer that we will use is "Ground"
     [SerializeField] private SpriteRenderer spriteSlauncher; // Used to reference the Slauncher sprite.
+    [SerializeField] private float cielingBounce; // Force of when the player hits the ceiling.
+
+    [SerializeField] private AudioSource jumpSoundEffect;
     
     private Animator anim; //Used to reference parameters from the animator
     private SpriteRenderer sprite, slauncher; // Used to flip the sprite
@@ -73,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isJumping)//Used for high/hold jump
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
 
             jumpBufferCounter = 0f;
@@ -82,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)//Used for small/tap jump
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
             coyoteTimeCounter = 0f;

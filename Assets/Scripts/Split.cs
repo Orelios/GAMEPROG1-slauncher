@@ -8,6 +8,9 @@ public class Split : MonoBehaviour
     public GameObject slime;
     public float splitForce = 5.0f;
     private Rigidbody2D rb;
+
+    [SerializeField] private AudioSource splitSoundEffect;
+    
     Vector2 v;
     // Start is called before the first frame update
 
@@ -24,6 +27,7 @@ public class Split : MonoBehaviour
             //only allows player to Split when health >= 3 
             if(player.health >= 3.0f)
             {
+                splitSoundEffect.Play();
                 //prevents player from immediately picking up newly split slime
                 //Player script has code for cooldown to pick up slimes
                 player.cooldownTimerPickUp = player.cooldownPickUp;
