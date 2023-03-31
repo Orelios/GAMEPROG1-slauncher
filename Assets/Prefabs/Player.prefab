@@ -271,9 +271,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  jumpingPower: 8
+  jumpingPower: 10
   rb: {fileID: 4989560133765878013}
   groundCheck: {fileID: 4989560131960788754}
+  ceilingCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -355,6 +356,7 @@ MonoBehaviour:
   invulCooldown: 1
   invulCooldownTimer: 0
   damageAble: 1
+  resizeTrue: 1
 --- !u!114 &4989560133765878012
 MonoBehaviour:
   m_ObjectHideFlags: 0
