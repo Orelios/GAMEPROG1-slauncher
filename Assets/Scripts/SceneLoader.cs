@@ -30,6 +30,7 @@ public class SceneLoader : MonoBehaviour
     {
         GoToSpecifiedScene(StartingSceneString);
         PlayerPrefs.SetInt("savedSc4", 0); //resets value of PlayerPrefs "savedSc4"
+        Timer.time = 0; 
     }
 
     public void ExitGame()
