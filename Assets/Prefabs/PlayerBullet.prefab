@@ -187,7 +187,7 @@ MonoBehaviour:
   bulletSpeed: 10
   lifeTime: 4
   fieldOfImpact: 2.5
-  force: 175
+  force: 875
   layer:
     serializedVersion: 2
     m_Bits: 8
