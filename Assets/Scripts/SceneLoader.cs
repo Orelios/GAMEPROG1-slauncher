@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        PlayNextScene();
     }
 
     public void ExitGame()
@@ -37,5 +37,10 @@ public class SceneLoader : MonoBehaviour
     public void PlayPreviousScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void GoToSpecifiedScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
