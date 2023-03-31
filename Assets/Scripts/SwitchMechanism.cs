@@ -6,8 +6,11 @@ public class SwitchMechanism : MonoBehaviour
 {
     public Switch playerSwitch;
     public float yMove = -3;
+    public float xMove = 6;
     public float moveVelocity = -1;
+    public bool horizontal;
     private float desiredYPosition;
+    private float desiredXPosition;
     // Start is called before the first frame update
     void Start()
     {
