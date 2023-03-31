@@ -32498,7 +32498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4685085514667705194, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
       propertyPath: m_SortingLayerID
-      value: -512814967
+      value: -471193837
       objectReference: {fileID: 0}
     - target: {fileID: 4685085514667705195, guid: 34e397d3565b7b140b1d1470a735e597, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -32780,6 +32780,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1299767428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1145776119845984, guid: b8b3c490f21c87345a2f86d0e594c439, type: 3}
+  m_PrefabInstance: {fileID: 1348934336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1348934336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32858,6 +32863,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4751420297314004, guid: b8b3c490f21c87345a2f86d0e594c439, type: 3}
   m_PrefabInstance: {fileID: 1348934336}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348934338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299767428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0024796e01906ea4798f05f8710d2b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1720081009}
+--- !u!61 &1348934339
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299767428}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7708333, y: 0.8125}
+    newSize: {x: 0.7708333, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7708333, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1001 &1366147429
 PrefabInstance:
   m_ObjectHideFlags: 0

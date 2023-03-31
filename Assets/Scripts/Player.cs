@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private float xScale, yScale, zScale = 0.0f;
     //cooldownTimerPickUp will be the value that decreases over time
     public float cooldownTimerPickUp;
+    public int sc4;
 
 
     public float invulCooldown = 2.0f;
@@ -21,13 +22,18 @@ public class Player : MonoBehaviour
     public bool damageAble = true;
     // Checks if the player can be damaged
 
-    public int resizeTrue = 1; 
+    public int resizeTrue = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         cooldownTimerPickUp = cooldownPickUp;
         invulCooldownTimer = invulCooldown;
+        if (PlayerPrefs.HasKey ("savedSc4")) //checks if PlayerPrefs has a variable called "savedSc4"
+        {
+            sc4 = PlayerPrefs.GetInt ("savedSc4"); //takes value of savedSc4 and puts it into sc4
+            Debug.Log("savedSc4 = " + PlayerPrefs.GetInt ("savedSc4"));
+        }
     }
 
     // Update is called once per frame
@@ -72,7 +78,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name + "has stayed on trigger");
+        // Debug.Log(other.gameObject.name + "has stayed on trigger");
         if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true || other.gameObject.tag == "Resupply" && canPickUp == true)
         {
             if (other.gameObject.tag == "Slime")
@@ -98,11 +104,17 @@ public class Player : MonoBehaviour
             cooldownTimerPickUp = cooldownPickUp;
             canPickUp = false;
         }
+        if(other.gameObject.tag == "SC4") //picking up SC4
+        {
+            sc4 += 1; //player's sc4 variable increments
+            PlayerPrefs.SetInt("savedSc4", sc4); //saves value of sc4 into PlayerPrefs "savedSc4"
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D other) //Picking up ally slimes in world
     {
-        Debug.Log(other.gameObject.name + "has stayed on trigger");
+        //Debug.Log(other.gameObject.name + "has stayed on trigger");
         if (other.gameObject.tag == "Ally Slime" && canPickUp == true)
         {
             health += 1.0f;
@@ -134,13 +146,13 @@ public class Player : MonoBehaviour
             {
                 xScale = smallScale;
                 yScale = smallScale;
-             
+
             }
             else if (health > smallHealth && health <= mediumHealth)
             {
                 xScale = mediumScale;
                 yScale = mediumScale;
-              
+
             }
             else if (health > mediumHealth && health <= largeHealth)
             {
@@ -148,6 +160,14 @@ public class Player : MonoBehaviour
                 yScale = largeScale;
             }
             transform.localScale = new Vector3(xScale, yScale, zScale);
+        }
+    }
+
+    void OnDisable()
+    {
+        if (PlayerPrefs.HasKey ("savedSc4")) //checks if PlayerPrefs has a variable called "savedSc4"
+        {
+            //PlayerPrefs.SetInt("savedSc4", 0);
         }
     }
 }
