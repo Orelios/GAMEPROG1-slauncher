@@ -5,17 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] private string TitleSceneString = "TitleScreen";
+    [SerializeField] private string StartingSceneString = "Castle Level";
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOverScreen");
+            switch (this.gameObject.tag)
+            {
+                case "WarpNext":
+                    PlayNextScene();
+                    break;
+                case "WarpPrevious":
+                    PlayPreviousScene();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        GoToSpecifiedScene(StartingSceneString);
     }
 
     public void ExitGame()
@@ -24,19 +37,23 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Player has exit the game");
     }
 
-    /*
-    public void GoToCredits()
-    {
-        SceneManager.LoadScene("TitleScreen");
-    }*/
-
     public void GoToTitle()
     {
-        SceneManager.LoadScene("TitleScreen");
+        GoToSpecifiedScene(TitleSceneString);
     }
 
     public void PlayNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void PlayPreviousScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void GoToSpecifiedScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
