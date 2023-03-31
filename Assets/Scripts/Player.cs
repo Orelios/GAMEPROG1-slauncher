@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name + "has stayed on trigger");
-        if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true)
+        if(other.gameObject.tag == "Slime" && canPickUp == true || other.gameObject.tag == "DroppedSlime" && canPickUp == true || other.gameObject.tag == "Resupply" && canPickUp == true)
         {
             if (other.gameObject.tag == "Slime")
             {
@@ -83,6 +83,11 @@ public class Player : MonoBehaviour
             if (other.gameObject.tag == "DroppedSlime")
             {
                 health += 2.0f;
+            }
+
+            if (other.gameObject.tag == "Resupply")
+            {
+                health = maxHealth;
             }
 
             if(health >= maxHealth) //prevents from overcapping

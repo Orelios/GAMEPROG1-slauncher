@@ -17,6 +17,7 @@ TagManager:
   - Ally Slime
   - WarpNext
   - WarpPrevious
+  - Resupply
   layers:
   - Default
   - TransparentFX
