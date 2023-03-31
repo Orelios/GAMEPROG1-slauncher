@@ -9,6 +9,8 @@ public class Switch : MonoBehaviour
     public Player player;
     private Animator anim; //Used to reference parameters from the animator
 
+    [SerializeField] private AudioSource leverSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class Switch : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && pressurePlate == false)
         {
+            leverSoundEffect.Play();
             active = true;
         }
 
@@ -32,6 +35,7 @@ public class Switch : MonoBehaviour
         {
             if(player.health  > 8)
             {
+                leverSoundEffect.Play();
                 active =true;
             }
         }

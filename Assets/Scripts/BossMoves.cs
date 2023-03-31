@@ -70,6 +70,13 @@ public class BossMoves : MonoBehaviour
     public GameObject poolOfWater;
     private bool activateAbleWater = true;
 
+    [SerializeField] private AudioSource magicSoundEffect1;
+    [SerializeField] private AudioSource magicSoundEffect2;
+    [SerializeField] private AudioSource magicSoundEffect3;
+    [SerializeField] private AudioSource magicSoundEffect4;
+    [SerializeField] private AudioSource summonSoundEffect;
+    [SerializeField] private AudioSource waterSoundEffect;
+
     // Update is called once per frame
     void Update()
     {
@@ -85,6 +92,7 @@ public class BossMoves : MonoBehaviour
         //Downward Bullets
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 1 || recharge <= 0 && phaseOne == true && bulletBarrage == 4) // Spawn a barrage of bullets on the upper left side
         {
+            magicSoundEffect1.Play();
             Instantiate(bossBullet, bulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(bossBullet, bulletSpawner2.transform.position, Quaternion.identity);
             Instantiate(bossBullet, bulletSpawner3.transform.position, Quaternion.identity);
@@ -96,6 +104,7 @@ public class BossMoves : MonoBehaviour
 
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 2 || recharge <= 0 && phaseOne == true && bulletBarrage == 5) // Spawn a barrage of bullets on the upper right side
         {
+            magicSoundEffect1.Play();
             Instantiate(bossBullet, bulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(bossBullet, bulletSpawner7.transform.position, Quaternion.identity);
             Instantiate(bossBullet, bulletSpawner8.transform.position, Quaternion.identity);
@@ -108,6 +117,7 @@ public class BossMoves : MonoBehaviour
         //Left Bullets
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 7) // Spawn a barrage of bullets on the upper left side
         {
+            magicSoundEffect2.Play();
             Instantiate(bossBullet, leftBulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(bossBullet, leftBulletSpawner2.transform.position, Quaternion.identity);
             Instantiate(bossBullet, leftBulletSpawner3.transform.position, Quaternion.identity);
@@ -118,6 +128,7 @@ public class BossMoves : MonoBehaviour
 
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 8) // Spawn a barrage of bullets on the upper right side
         {
+            magicSoundEffect2.Play();
             Instantiate(bossBullet, leftBulletSpawner5.transform.position, Quaternion.identity);
             Instantiate(bossBullet, leftBulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(bossBullet, leftBulletSpawner7.transform.position, Quaternion.identity);
@@ -129,6 +140,7 @@ public class BossMoves : MonoBehaviour
         //Right Bullets
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 10) // Spawn a barrage of bullets on the upper left side
         {
+            magicSoundEffect3.Play();
             Instantiate(bossBullet, rightBulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(bossBullet, rightBulletSpawner2.transform.position, Quaternion.identity);
             Instantiate(bossBullet, rightBulletSpawner3.transform.position, Quaternion.identity);
@@ -139,6 +151,7 @@ public class BossMoves : MonoBehaviour
 
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 11) // Spawn a barrage of bullets on the upper right side
         {
+            magicSoundEffect3.Play();
             Instantiate(bossBullet, rightBulletSpawner5.transform.position, Quaternion.identity);
             Instantiate(bossBullet, rightBulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(bossBullet, rightBulletSpawner7.transform.position, Quaternion.identity);
@@ -151,6 +164,7 @@ public class BossMoves : MonoBehaviour
         //Healing Slime
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 3 || recharge <= 0 && phaseOne == true && bulletBarrage == 9) // Spawn a barrage of falling healing slimes on the upper left side
         {
+            magicSoundEffect4.Play();
             Instantiate(fallingSlime, bulletSpawner1.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner2.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner3.transform.position, Quaternion.identity);
@@ -162,6 +176,7 @@ public class BossMoves : MonoBehaviour
 
         if (recharge <= 0 && phaseOne == true && bulletBarrage == 6 || recharge <= 0 && phaseOne == true && bulletBarrage == 12) // Spawn a barrage of falling healing slimes on the upper right side
         {
+            magicSoundEffect4.Play();
             Instantiate(fallingSlime, bulletSpawner6.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner7.transform.position, Quaternion.identity);
             Instantiate(fallingSlime, bulletSpawner8.transform.position, Quaternion.identity);
@@ -185,6 +200,7 @@ public class BossMoves : MonoBehaviour
 
         if(phaseTwo == true && summonAble == true) //Summons mobs after taking a certain amount of damage
         {
+            summonSoundEffect.Play();
             Instantiate(enemyMelee, enemySpawner1.transform.position, Quaternion.identity);
             Instantiate(enemyMelee, enemySpawner2.transform.position, Quaternion.identity);
             Instantiate(enemyTurret, enemySpawner3.transform.position, Quaternion.identity);
@@ -204,6 +220,7 @@ public class BossMoves : MonoBehaviour
 
         if (phaseThree == true && activateAbleWater == true)
         {
+            waterSoundEffect.Play();
             poolOfWater.SetActive(true);
             activateAbleWater = false;
         }

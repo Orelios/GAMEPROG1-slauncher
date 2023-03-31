@@ -27,6 +27,22 @@ public class Jail : MonoBehaviour
                 allySlime.KnockFromRight = false;
             }
         }
+
+        else if (collision.gameObject.tag == "PlayerBullet")
+        {
+            Destroy(this.gameObject);
+            allySlime.KBCounter = allySlime.KBTotalTime;//resets KBCounter to equal KBTotalTime
+
+            Spawn();
+            if (collision.transform.position.x < transform.position.x)//if player hit object from left, hit from right
+            {
+                allySlime.KnockFromRight = true;
+            }
+            if (collision.transform.position.x > transform.position.x)//if player hit object from right, hit from left
+            {
+                allySlime.KnockFromRight = false;
+            }
+        }
     }
     void Spawn()
     {

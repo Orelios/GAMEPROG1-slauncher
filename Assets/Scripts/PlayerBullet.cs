@@ -20,6 +20,8 @@ public class PlayerBullet : MonoBehaviour
     public LayerMask layer;
     public GameObject explosion;
 
+    [SerializeField] private AudioSource explosionSoundEffect;
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -66,6 +68,7 @@ public class PlayerBullet : MonoBehaviour
     {
         rb.velocity = new Vector2(0, 0);
         explosion.SetActive(true);
+        explosionSoundEffect.Play();
 
         // Launch gameObjects nearby
         var objectsNearby = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, layer);

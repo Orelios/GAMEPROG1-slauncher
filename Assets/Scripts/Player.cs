@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
 
     public int resizeTrue = 1;
 
+    [SerializeField] private AudioSource hurtSoundEffect;
+    [SerializeField] private AudioSource SC4SoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,6 +109,7 @@ public class Player : MonoBehaviour
         }
         if(other.gameObject.tag == "SC4") //picking up SC4
         {
+            SC4SoundEffect.Play();
             sc4 += 1; //player's sc4 variable increments
             PlayerPrefs.SetInt("savedSc4", sc4); //saves value of sc4 into PlayerPrefs "savedSc4"
             Destroy(other.gameObject);
@@ -132,6 +136,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" && damageAble == true || other.gameObject.tag == "EnemyBullet" && damageAble == true || other.gameObject.tag == "Boss" && damageAble == true)
         {
+            hurtSoundEffect.Play();
             health -= 1;
             invulCooldownTimer = invulCooldown;
             damageAble = false;

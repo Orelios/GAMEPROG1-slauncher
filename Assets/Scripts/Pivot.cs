@@ -12,6 +12,8 @@ public class Pivot : MonoBehaviour
     public float cooldown;
     private float cooldownTimer;
 
+    [SerializeField] private AudioSource shootSoundEffect;
+
     void Start()
     {
         canFire = true;
@@ -57,6 +59,7 @@ public class Pivot : MonoBehaviour
 
     void ShootSlime()
     {
+        shootSoundEffect.Play();
         Instantiate(bullet, Slauncher.position, Quaternion.identity);
         myPlayer.health -= 1.0f;
         canFire = false;
