@@ -5,17 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] private string TitleSceneString = "TitleScreen";
+    [SerializeField] private string StartingSceneString = "Castle Level";
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOverScreen");
+            switch (this.gameObject.tag)
+            {
+                case "WarpNext":
+                    PlayNextScene();
+                    break;
+                case "WarpPrevious":
+                    PlayPreviousScene();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
     public void PlayGame()
     {
-        PlayNextScene();
+        GoToSpecifiedScene(StartingSceneString);
     }
 
     public void ExitGame()
@@ -26,7 +39,7 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToTitle()
     {
-        SceneManager.LoadScene("TitleScreen");
+        GoToSpecifiedScene(TitleSceneString);
     }
 
     public void PlayNextScene()
