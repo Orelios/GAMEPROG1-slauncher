@@ -261,7 +261,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2629618053270463514, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
       propertyPath: m_Name
-      value: EnemyTurret
+      value: EnemyTurret Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862600462099453952, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
+      propertyPath: m_Size.x
+      value: 2.812544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862600462099453952, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7731895
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862600462099453952, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.023045897
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862600462099453952, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010091782
       objectReference: {fileID: 0}
     - target: {fileID: 2862600462099453952, guid: 0fc7c2fae16233c42845b65cd5045219, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
