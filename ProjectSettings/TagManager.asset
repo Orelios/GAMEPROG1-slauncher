@@ -14,11 +14,12 @@ TagManager:
   - EnemyBullet
   - DroppedSlime
   - Boss
-  - Ally Slime
   - WarpNext
   - WarpPrevious
   - SC4
   - Resupply
+  - Jail
+  - AllySlime
   layers:
   - Default
   - TransparentFX
