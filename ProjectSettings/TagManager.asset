@@ -14,6 +14,7 @@ TagManager:
   - EnemyBullet
   - DroppedSlime
   - Boss
+  - Ally Slime
   layers:
   - Default
   - TransparentFX
@@ -65,4 +66,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1561599571
+    locked: 0
+  - name: UI
+    uniqueID: 3782152329
     locked: 0
