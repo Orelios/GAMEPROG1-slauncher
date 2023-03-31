@@ -6,9 +6,14 @@ public class Spawn : MonoBehaviour
 {
     Vector2 checkPointPos;
     public Player player;
+    private Animator anim; //Used to reference parameters from the animator
+    private Rigidbody2D rb;
+
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         checkPointPos = transform.position;
     }
 
@@ -25,16 +30,28 @@ public class Spawn : MonoBehaviour
            
             if (player.health == 0) 
             {
-                player.health = player.maxHealth;
-                transform.position = checkPointPos;
+                Die();
             }
         }
 
         if (player.health == 0)
         {
-            player.health = player.maxHealth;
-            transform.position = checkPointPos;
+            Die();
         }
+    }
+
+    private void Respawn()
+    {
+        player.health = player.maxHealth;
+        transform.position = checkPointPos;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        anim.SetBool("death", false);
+    }
+
+    private void Die()
+    {
+        anim.SetBool("death", true);
+        rb.bodyType = RigidbodyType2D.Static;
     }
  
 }
