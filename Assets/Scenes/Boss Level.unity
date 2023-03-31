@@ -13758,6 +13758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 730305946}
+  bossMoves: {fileID: 1653484343}
 --- !u!1 &1387520205
 GameObject:
   m_ObjectHideFlags: 0
@@ -14235,6 +14236,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3383744642723753521, guid: 55d09839e8525a7408e27f1693a37d38, type: 3}
   m_PrefabInstance: {fileID: 1612629210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653484343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6101645804590837322, guid: 19f75ae0e55088c428b5eb2202414a8d, type: 3}
+  m_PrefabInstance: {fileID: 1109154722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8a030fc1da1964381df51136bb53a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1677518362
 GameObject:
   m_ObjectHideFlags: 0
