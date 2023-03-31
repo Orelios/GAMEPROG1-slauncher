@@ -15,6 +15,7 @@ TagManager:
   - DroppedSlime
   - Boss
   - Ally Slime
+  - SC4
   layers:
   - Default
   - TransparentFX

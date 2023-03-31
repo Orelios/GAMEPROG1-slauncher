@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private float xScale, yScale, zScale = 0.0f;
     //cooldownTimerPickUp will be the value that decreases over time
     public float cooldownTimerPickUp;
+    public int sc4;
 
 
     public float invulCooldown = 2.0f;
@@ -28,6 +29,10 @@ public class Player : MonoBehaviour
     {
         cooldownTimerPickUp = cooldownPickUp;
         invulCooldownTimer = invulCooldown;
+        if (PlayerPrefs.HasKey ("savedSc4")) //checks if PlayerPrefs has a variable called "savedSc4"
+        {
+            sc4 = PlayerPrefs.GetInt ("savedSc4"); //takes value of savedSc4 and puts it into sc4
+        }
     }
 
     // Update is called once per frame
@@ -92,6 +97,12 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             cooldownTimerPickUp = cooldownPickUp;
             canPickUp = false;
+        }
+        if(other.gameObject.tag == "SC4") //picking up SC4
+        {
+            sc4 += 1; //player's sc4 variable increments
+            PlayerPrefs.SetInt("savedSc4", sc4); //saves value of sc4 into PlayerPrefs "savedSc4"
+            Destroy(other.gameObject);
         }
     }
 

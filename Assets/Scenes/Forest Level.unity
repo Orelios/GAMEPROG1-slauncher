@@ -3641,7 +3641,7 @@ GameObject:
   - component: {fileID: 341585188}
   m_Layer: 0
   m_Name: SC4-1
-  m_TagString: Untagged
+  m_TagString: SC4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149581,7 +149581,7 @@ GameObject:
   - component: {fileID: 2075153604}
   m_Layer: 0
   m_Name: SC4-2
-  m_TagString: Untagged
+  m_TagString: SC4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
