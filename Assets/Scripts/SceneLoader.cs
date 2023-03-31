@@ -24,12 +24,6 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Player has exit the game");
     }
 
-    /*
-    public void GoToCredits()
-    {
-        SceneManager.LoadScene("TitleScreen");
-    }*/
-
     public void GoToTitle()
     {
         SceneManager.LoadScene("TitleScreen");
