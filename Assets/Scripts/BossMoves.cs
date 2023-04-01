@@ -7,11 +7,11 @@ public class BossMoves : MonoBehaviour
     private bool phaseOne = true;
     private bool phaseTwo = false;
     private bool phaseThree = false;
+    [SerializeField] private GameObject warp;
 
     [Header("Dave")]
     public float health = 15.0f;
     public float maxHealth = 15.0f;
-
 
     [Header("Bullets")]
     public GameObject bossBullet; //Dangerous Falling Bullets
@@ -76,6 +76,11 @@ public class BossMoves : MonoBehaviour
     [SerializeField] private AudioSource magicSoundEffect4;
     [SerializeField] private AudioSource summonSoundEffect;
     [SerializeField] private AudioSource waterSoundEffect;
+
+    void Start()
+    {
+        warp.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -228,13 +233,14 @@ public class BossMoves : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) //Checks if it gets hit by the player bullet
     {
-        if (other.tag == "PlayerBullet") 
+        if (other.tag == "PlayerBullet")
         {
             health -= 1.0f;
         }
 
         if (health <= 0)
         {
+            warp.SetActive(true);
             Destroy(gameObject);
         }
     }
