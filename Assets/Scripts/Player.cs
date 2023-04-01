@@ -37,6 +37,10 @@ public class Player : MonoBehaviour
             sc4 = PlayerPrefs.GetInt ("savedSc4"); //takes value of savedSc4 and puts it into sc4
             Debug.Log("savedSc4 = " + PlayerPrefs.GetInt ("savedSc4"));
         }
+        if (PlayerPrefs.HasKey ("savedHealth"))
+        {
+            health = PlayerPrefs.GetFloat ("savedHealth"); //only called at the start of each scene and before update, so no problem
+        }
     }
 
     // Update is called once per frame
@@ -76,6 +80,7 @@ public class Player : MonoBehaviour
             canPickUp = true;
         }
         PlayerResize();
+        PlayerPrefs.SetFloat("savedHealth", health); //saves value of health into PlayerPrefs "savedHealth". Placed in update so no need to SetFloat for every even health is added or subtracted
     }
 
 
