@@ -70,7 +70,16 @@ public class PlayerBullet : MonoBehaviour
 
     private void Explode()
     {
-        rb.velocity = new Vector2(0, 0);
+        try
+        {
+            rb.velocity = new Vector2(0.0f, 0.0f);
+        }
+        catch
+        {
+            rb = GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(0.0f, 0.0f);
+        }
+
         explosion.SetActive(true);
         explosionSoundEffect.Play();
 
