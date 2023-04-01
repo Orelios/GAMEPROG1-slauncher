@@ -19416,6 +19416,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4989560133765878010, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
+      propertyPath: time
+      value: 
+      objectReference: {fileID: 730305946}
     - target: {fileID: 4989560133765878011, guid: 18c978e3a54e0cd4485f50d1ce491cb2, type: 3}
       propertyPath: resizeTrue
       value: 1

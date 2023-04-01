@@ -12,6 +12,8 @@ public class Spawn : MonoBehaviour
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource respawnSoundEffect;
 
+    public Timer time; 
+
 
     void Start()
     {
@@ -34,12 +36,14 @@ public class Spawn : MonoBehaviour
             if (player.health == 0) 
             {
                 Die();
+                time.penalty(10);
             }
         }
 
         if (player.health == 0)
         {
             Die();
+            time.penalty(10);
         }
     }
 
@@ -57,6 +61,7 @@ public class Spawn : MonoBehaviour
         deathSoundEffect.Play();
         anim.SetBool("death", true);
         rb.bodyType = RigidbodyType2D.Static;
+        player.health = player.maxHealth;
     }
  
 }

@@ -9,7 +9,7 @@ public class EndPoint : MonoBehaviour
     public BossMoves bossMoves; 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && bossMoves.health == 0)
+        if (collision.CompareTag("Player") && bossMoves.health == 0) 
         {
             timer.endPoint = 1;
             SceneManager.LoadScene("GameOverScreen"); 

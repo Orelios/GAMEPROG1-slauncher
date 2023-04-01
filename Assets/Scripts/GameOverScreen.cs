@@ -17,17 +17,14 @@ public class GameOverScreen : MonoBehaviour
     SaveHighScore saveHighScore = new SaveHighScore();
     void Start()
     {
-        totalTime = Timer.time;
-        try
-        {
-            loadHighScore(); 
-        }
-        catch 
+        totalTime = Timer.time + Timer.timePenalty;
+        string filePath = Application.dataPath + "/StreamingAssets";
+        if (!File.Exists(filePath))
         {
             saveHighScore.highScore = totalTime;
             string HighScoreData = JsonUtility.ToJson(saveHighScore);
-            string filePath = Application.dataPath + "/StreamingAssets";
-            File.WriteAllText(filePath, HighScoreData);
+            string fileDestination = Application.dataPath + "/StreamingAssets";
+            File.WriteAllText(fileDestination, HighScoreData);
         }
 
     }
