@@ -5,16 +5,11 @@ using UnityEngine;
 public class SC4Shield : MonoBehaviour
 {
     public Player player;
-    // Start is called before the first frame update
+    [SerializeField] GameObject warp;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        warp.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -24,6 +19,7 @@ public class SC4Shield : MonoBehaviour
             if(player.sc4 >= 2)
             {
                 Destroy(gameObject);
+                warp.SetActive(true);
             }
         }
     }
