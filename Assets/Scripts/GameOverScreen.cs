@@ -17,7 +17,7 @@ public class GameOverScreen : MonoBehaviour
     SaveHighScore saveHighScore = new SaveHighScore();
     void Start()
     {
-        totalTime = Timer.time;
+        totalTime = Timer.time + Timer.timePenalty;
         try
         {
             loadHighScore(); 

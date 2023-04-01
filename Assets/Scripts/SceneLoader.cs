@@ -31,7 +31,8 @@ public class SceneLoader : MonoBehaviour
         GoToSpecifiedScene(StartingSceneString);
         PlayerPrefs.SetInt("savedSc4", 0); //resets value of PlayerPrefs "savedSc4"
         PlayerPrefs.SetFloat("savedHealth", 12.0f); //resets value of PlayerPrefs "savedHealth" to full
-        Timer.time = 0; 
+        Timer.time = 0;
+        Timer.timePenalty = 0; 
     }
 
     public void ExitGame()
