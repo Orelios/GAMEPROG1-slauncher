@@ -14,6 +14,7 @@ public class GameOverScreen : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     private float totalTime;
     private float highScore;
+    string minutes, seconds; 
     SaveHighScore saveHighScore = new SaveHighScore();
     void Start()
     {
@@ -53,8 +54,10 @@ public class GameOverScreen : MonoBehaviour
         string filePath = Application.dataPath + "/StreamingAssets";
         string HighScoreData = File.ReadAllText(filePath);
         saveHighScore = JsonUtility.FromJson<SaveHighScore>(HighScoreData);
-        highScore = saveHighScore.highScore; 
-        highScoreText.text = "High Score: " + highScore.ToString("0.00");
+        highScore = saveHighScore.highScore;
+        minutes = Mathf.Floor(highScore / 60).ToString("00");
+        seconds = Mathf.Floor(highScore % 60).ToString("00"); 
+        highScoreText.text = "High Score: " + minutes+ ":" + seconds;
     }
 
     private void GradeAndEndText()
@@ -98,7 +101,9 @@ public class GameOverScreen : MonoBehaviour
 
     private void TotalTime()
     {
-        totalTimeText.text = "Total Time: " + totalTime.ToString("0.00");
+        minutes = Mathf.Floor(totalTime / 60).ToString("00");
+        seconds = Mathf.Floor(totalTime % 60).ToString("00");
+        totalTimeText.text = "Total Time: " + minutes + ":" + seconds;
     }
 }
 

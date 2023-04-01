@@ -11,7 +11,8 @@ public class Timer : MonoBehaviour
     static public float timePenalty = 0;
     private float tempPenalty = 0; 
     private float tempTime = 0; 
-    public int endPoint = 0; 
+    public int endPoint = 0;
+    private string minutes, seconds; 
 
     void Start()
     {
@@ -35,7 +36,9 @@ public class Timer : MonoBehaviour
     {
         time += Time.deltaTime;
         tempTime += Time.deltaTime; 
-        timerText.text = "Time: " + tempTime.ToString("0.00");
+        minutes = Mathf.Floor(tempTime / 60).ToString("00");
+        seconds = Mathf.Floor(tempTime % 60).ToString("00"); 
+        timerText.text = "Time: " + minutes + ":" + seconds;
         if (endPoint == 1)
         {
             enabled = false;
