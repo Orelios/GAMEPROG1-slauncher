@@ -499,11 +499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461057631946605162, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 4461057631946605162, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4461057631946605162, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -537,9 +537,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092536451019985686, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092536451019985686, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5479708
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092536451019985686, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5479708
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092536451019985686, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
     - target: {fileID: 6512089772334383297, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
       propertyPath: m_Name
       value: ForwardWarp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512089772334383297, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3f331f6b680834db8dd8d7690a2cb4, type: 3}
@@ -2856,6 +2876,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6101645804590837322, guid: 19f75ae0e55088c428b5eb2202414a8d, type: 3}
+      propertyPath: warp
+      value: 
+      objectReference: {fileID: 1384700073}
     - target: {fileID: 6101645804590837322, guid: 19f75ae0e55088c428b5eb2202414a8d, type: 3}
       propertyPath: enemyTurret
       value: 
