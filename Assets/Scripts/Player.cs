@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         }
         if (PlayerPrefs.HasKey ("savedHealth"))
         {
-            health = PlayerPrefs.GetInt ("savedHealth"); //only called at the start of each scene and before update, so no problem
+            health = PlayerPrefs.GetFloat ("savedHealth"); //only called at the start of each scene and before update, so no problem
         }
     }
 
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
             canPickUp = true;
         }
         PlayerResize();
-        PlayerPrefs.SetInt("savedHealth", health); //saves value of health into PlayerPrefs "savedHealth". Placed in update so no need to SetInt for every even health is added or subtracted
+        PlayerPrefs.SetFloat("savedHealth", health); //saves value of health into PlayerPrefs "savedHealth". Placed in update so no need to SetFloat for every even health is added or subtracted
     }
 
 
