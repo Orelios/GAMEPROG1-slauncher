@@ -62,37 +62,37 @@ public class GameOverScreen : MonoBehaviour
 
     private void GradeAndEndText()
     {
-        if (totalTime <= 20)
+        if (totalTime <= 140)
         {
             endText.text = "TITLE: GOD GAMER";
             gradeText.text = "GRADE: S";
         }
-        else if (totalTime >= 20)
+        else if (totalTime <= 180)
         {
             endText.text = "TITLE: GAMER";
             gradeText.text = "GRADE: A";
         }
-        else if (totalTime >= 40)
+        else if (totalTime <= 220)
         {
             endText.text = "TITLE: GOOD";
             gradeText.text = "GRADE: B";
         }
-        else if (totalTime >= 60)
+        else if (totalTime <= 300)
         {
             endText.text = "TITLE: DECENT";
             gradeText.text = "GRADE: C";
         }
-        else if (totalTime >= 80)
+        else if (totalTime <= 360)
         {
-            endText.text = "TITLE: MEH";
+            endText.text = "TITLE: IT'S OKAY";
             gradeText.text = "GRADE: D";
         }
-        else if (totalTime >= 100)
+        else if (totalTime <= 600)
         {
             endText.text = "TITLE: NOOB";
             gradeText.text = "GRADE: E";
         }
-        else if (totalTime >= 120)
+        else if (totalTime > 600)
         {
             endText.text = "TITLE: NOOB KING";
             gradeText.text = "GRADE: F";
