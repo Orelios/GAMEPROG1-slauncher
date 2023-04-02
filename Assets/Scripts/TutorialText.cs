@@ -7,18 +7,32 @@ public class TutorialText : MonoBehaviour
 {
     TextMeshProUGUI text;
     private int tutorialOrder;
-    private float blankAfter, blankTimer = 10.0f; //for blanking the text
+    public float blankAfter = 10;
+    private float blankTimer; //for blanking the text
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
         text.text = "Movement (WASD)";
         tutorialOrder = 1;
+        blankTimer = blankAfter;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //timer starts when game starts, and disappears after set time even if player doesn't follow tutorial
+        if (blankTimer > 0)
+        {
+            blankTimer -= Time.deltaTime;
+        }
+        if (blankTimer <= 0)
+        {
+            text.text = ""; //blanks the text to make it "disappear"
+            tutorialOrder = 4;
+        }
+        
+        //if player follows tutorial
         if(tutorialOrder == 1)
         {
             if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
@@ -36,19 +50,6 @@ public class TutorialText : MonoBehaviour
         {
             text.text = "Press 'p' any time to restart (At the cost of added time)";
             tutorialOrder += 1;
-        }
-        if(tutorialOrder == 4) //has timer to blank the text
-        {
-            blankTimer = blankAfter;
-            if (blankTimer > 0.0f)
-            {
-                blankTimer -= Time.deltaTime;
-            }
-            if (blankTimer <= 0.0f)
-            {
-                text.text = ""; //blanks the text to make it "disappear"
-            }
-            
         }
     }
 }
