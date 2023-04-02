@@ -14,8 +14,11 @@ public class TutorialText : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         text.text = "Movement (WASD)";
-        tutorialOrder = 1;
         blankTimer = blankAfter;
+        if (PlayerPrefs.HasKey ("savedTutorialOrder"))
+        {
+            tutorialOrder = PlayerPrefs.GetInt ("savedTutorialOrder");
+        }
     }
 
     // Update is called once per frame
