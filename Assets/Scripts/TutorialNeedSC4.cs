@@ -23,4 +23,8 @@ public class TutorialNeedSC4 : MonoBehaviour
     {
         text.text = "2 SC4s needed to destroy barrier";
     }
+    public void HideText()
+    {
+        text.text = " ";
+    }
 }
