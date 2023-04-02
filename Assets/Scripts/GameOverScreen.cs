@@ -62,7 +62,7 @@ public class GameOverScreen : MonoBehaviour
 
     private void GradeAndEndText()
     {
-        if (totalTime <= 140)
+        if (totalTime <= 120)
         {
             endText.text = "TITLE: GOD GAMER";
             gradeText.text = "GRADE: S";
