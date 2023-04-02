@@ -33616,6 +33616,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212544763138770930, guid: b8b3c490f21c87345a2f86d0e594c439, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212544763138770930, guid: b8b3c490f21c87345a2f86d0e594c439, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1610163927
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8b3c490f21c87345a2f86d0e594c439, type: 3}
 --- !u!4 &1348934337 stripped
