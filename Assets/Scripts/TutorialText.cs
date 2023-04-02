@@ -6,7 +6,7 @@ using TMPro;
 public class TutorialText : MonoBehaviour
 {
     TextMeshProUGUI text;
-    private int tutorialOrder;
+    private int tutorialOrder = 1;
     public float blankAfter = 10;
     private float blankTimer; //for blanking the text
     // Start is called before the first frame update
@@ -33,6 +33,7 @@ public class TutorialText : MonoBehaviour
         {
             text.text = ""; //blanks the text to make it "disappear"
             tutorialOrder = 4;
+            PlayerPrefs.SetInt("savedTutorialOrder", tutorialOrder);
         }
         
         //if player follows tutorial
@@ -42,17 +43,25 @@ public class TutorialText : MonoBehaviour
             {
                 text.text = "Press space to split";
                 tutorialOrder += 1;
+                PlayerPrefs.SetInt("savedTutorialOrder", tutorialOrder);
             }
         }
         if(tutorialOrder == 2 && Input.GetKeyDown(KeyCode.Space))
         {
             text.text = "Press left mouse button to shoot";
             tutorialOrder += 1;
+            PlayerPrefs.SetInt("savedTutorialOrder", tutorialOrder);
         }
         if(tutorialOrder == 3 && Input.GetKeyDown(KeyCode.Mouse0))
         {
             text.text = "Press 'p' any time to restart (At the cost of added time)";
             tutorialOrder += 1;
+            PlayerPrefs.SetInt("savedTutorialOrder", tutorialOrder);
+        }
+        if(tutorialOrder == 4)
+        {
+            text.text = "";
+            PlayerPrefs.SetInt("savedTutorialOrder", tutorialOrder);
         }
     }
 }
