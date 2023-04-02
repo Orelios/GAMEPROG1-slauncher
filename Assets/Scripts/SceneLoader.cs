@@ -33,6 +33,7 @@ public class SceneLoader : MonoBehaviour
         PlayerPrefs.SetFloat("savedHealth", 12.0f); //resets value of PlayerPrefs "savedHealth" to full
         Timer.time = 0;
         Timer.timePenalty = 0; 
+        PlayerPrefs.SetInt("savedTutorialOrder", 1);
     }
 
     public void ExitGame()
