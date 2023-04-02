@@ -5,6 +5,7 @@ using UnityEngine;
 public class SC4Shield : MonoBehaviour
 {
     public Player player;
+    public TutorialNeedSC4 text;
     [SerializeField] GameObject warp;
 
     void Start()
@@ -20,6 +21,11 @@ public class SC4Shield : MonoBehaviour
             {
                 Destroy(gameObject);
                 warp.SetActive(true);
+                text.HideText(); //actually unnecessary since when scene restarts, text restarts as well
+            }
+            else if(player.sc4 < 2)
+            {
+                text.ShowText();
             }
         }
     }
