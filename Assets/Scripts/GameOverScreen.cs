@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System; 
+using System;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class GameOverScreen : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     private float totalTime;
     private float highScore;
-    string minutes, seconds; 
+    string minutes, seconds;
     SaveHighScore saveHighScore = new SaveHighScore();
     void Start()
     {
@@ -39,10 +39,10 @@ public class GameOverScreen : MonoBehaviour
     }
 
     private void Highscore()
-    {     
+    {
         if (totalTime < highScore)
         {
-            saveHighScore.highScore = totalTime; 
+            saveHighScore.highScore = totalTime;
             string HighScoreData = JsonUtility.ToJson(saveHighScore);
             string filePath = Application.dataPath + "/StreamingAssets";
             File.WriteAllText(filePath, HighScoreData);
@@ -56,8 +56,8 @@ public class GameOverScreen : MonoBehaviour
         saveHighScore = JsonUtility.FromJson<SaveHighScore>(HighScoreData);
         highScore = saveHighScore.highScore;
         minutes = Mathf.Floor(highScore / 60).ToString("00");
-        seconds = Mathf.Floor(highScore % 60).ToString("00"); 
-        highScoreText.text = "High Score: " + minutes+ ":" + seconds;
+        seconds = Mathf.Floor(highScore % 60).ToString("00");
+        highScoreText.text = "HIGH SCORE\n" + minutes+ ":" + seconds;
     }
 
     private void GradeAndEndText()
@@ -103,7 +103,7 @@ public class GameOverScreen : MonoBehaviour
     {
         minutes = Mathf.Floor(totalTime / 60).ToString("00");
         seconds = Mathf.Floor(totalTime % 60).ToString("00");
-        totalTimeText.text = "Total Time: " + minutes + ":" + seconds;
+        totalTimeText.text = "TOTAL TIME\n" + minutes + ":" + seconds;
     }
 }
 
