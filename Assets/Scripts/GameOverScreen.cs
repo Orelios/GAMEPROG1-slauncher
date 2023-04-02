@@ -19,12 +19,12 @@ public class GameOverScreen : MonoBehaviour
     void Start()
     {
         totalTime = Timer.time + Timer.timePenalty;
-        string filePath = Application.dataPath + "/StreamingAssets";
+        string filePath = Application.streamingAssetsPath;
         if (!File.Exists(filePath))
         {
             saveHighScore.highScore = totalTime;
             string HighScoreData = JsonUtility.ToJson(saveHighScore);
-            string fileDestination = Application.dataPath + "/StreamingAssets";
+            string fileDestination = Application.streamingAssetsPath;
             File.WriteAllText(fileDestination, HighScoreData);
         }
 
@@ -44,14 +44,14 @@ public class GameOverScreen : MonoBehaviour
         {
             saveHighScore.highScore = totalTime;
             string HighScoreData = JsonUtility.ToJson(saveHighScore);
-            string filePath = Application.dataPath + "/StreamingAssets";
+            string filePath = Application.streamingAssetsPath;
             File.WriteAllText(filePath, HighScoreData);
         }
     }
 
     private void loadHighScore()
     {
-        string filePath = Application.dataPath + "/StreamingAssets";
+        string filePath = Application.streamingAssetsPath;
         string HighScoreData = File.ReadAllText(filePath);
         saveHighScore = JsonUtility.FromJson<SaveHighScore>(HighScoreData);
         highScore = saveHighScore.highScore;

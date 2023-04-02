@@ -11,19 +11,19 @@ public class ShowHighScore : MonoBehaviour
     SaveHighScore saveHighScore = new SaveHighScore();
     void Start()
     {
-        string filePath = Application.dataPath + "/StreamingAssets";
+        string filePath = Application.streamingAssetsPath;
         if (!File.Exists(filePath))
         {
             saveHighScore.highScore = highScore;
             string HighScoreData = JsonUtility.ToJson(saveHighScore);
-            string fileDestination = Application.dataPath + "/StreamingAssets";
+            string fileDestination = Application.streamingAssetsPath;
             File.WriteAllText(fileDestination, HighScoreData);
         }
     }
 
     private void PrintHighScore()
     {
-        string filePath = Application.dataPath + "/StreamingAssets";
+        string filePath = Application.streamingAssetsPath;
         string HighScoreData = File.ReadAllText(filePath);
         saveHighScore = JsonUtility.FromJson<SaveHighScore>(HighScoreData);
         highScore = saveHighScore.highScore;
